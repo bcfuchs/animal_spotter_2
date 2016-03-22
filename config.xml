@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="org.sciencemakers.cam" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Animal Spotter</name>
+    <description>
+      A prototype for Animal Spotter
+    </description>
+    <author email="info@sciencemakers.net" href="http://sciencemakers.net">
+      Sciencemakers Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <icon src="res/icon.png" />
+</widget>
+

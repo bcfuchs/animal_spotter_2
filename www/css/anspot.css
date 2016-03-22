@@ -1,0 +1,97 @@
+/**  ##d5f981   keylime */
+
+html,body {
+    height: 100%;
+}
+
+#wrap {
+
+    height: 100%;
+}
+.black {
+    background: black;
+
+}
+.blue {
+   background:     #2efdfe; 
+}
+.title-container {
+
+    height:15%;
+}
+
+
+.main-container {
+
+    max-height: 60%;
+    border-top: 2px solid gray;
+}
+.front-footer-container {
+    max-height: 24%;
+    height: 24% !important;;
+    border-top: 2px solid gray;
+}
+
+.earth-container {
+    height: 150px !important;;
+    width: 150px !important;;
+    margin-top: 30px;
+    border: 1px solid blue;    
+    margin-left: auto;
+    margin-right: auto;
+    background: #e18d27;
+
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+
+}
+.earth-container img {
+
+    
+    max-height: 120px !important;
+    left: 10px;
+    top: 5px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer-panel {
+    min-height: 300px !important;
+}
+.panel-height-160  {
+    height: 160px !important;
+}
+.nav-panel {
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    background-repeat:  no-repeat !important;;
+    min-height: 180px !important;
+    background-size: 300px !important;
+    
+    //    display: inline;
+    /**
+    -webkit-box-shadow: 6px 2px 5px 0px rgba(214,206,214,1);
+    -moz-box-shadow: 6px 2px 5px 0px rgba(214,206,214,1);
+    box-shadow: 6px 2px 5px 0px rgba(214,206,214,1);
+    */
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+.page-title {
+ 
+
+}
+
+.green {
+
+   
+    background: #29f62e;
+}
+.science-corner {
+    
+ 
+}
