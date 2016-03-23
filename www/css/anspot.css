@@ -24,44 +24,80 @@ html,body {
 .main-container {
 
     max-height: 60%;
+//    height: 60%;
     border-top: 2px solid gray;
+}
+.main-container .row,.footer-container .row,.front-footer-container .row {
+    height: 100%;
+
+}
+.species-container .row {
+    height: 24%;
+    border-bottom: 1px solid gray;
+}
+
+.instructions {
+
+    border: 1px solid gray;
+}
+
+.main-container.species-container {
+    height: 70%;
+}
+
+.species-select:hover {
+
+    background: blue;
+    color: white;
+    
 }
 .front-footer-container {
     max-height: 24%;
     height: 24% !important;;
     border-top: 2px solid gray;
 }
-
+.footer-container {
+    max-height: 15%;
+    height: 15% !important;;
+    border-top: 2px solid gray;
+}
+/** earth container front page */
 .earth-container {
-    height: 150px !important;;
-    width: 150px !important;;
+    height: 100px !important;;
+    width: 100px !important;;
     margin-top: 30px;
     border: 1px solid blue;    
     margin-left: auto;
     margin-right: auto;
     background: #e18d27;
-
+    padding: 10px;
+    
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     border-radius: 6px;
 
 }
-.earth-container img {
 
-    
-    max-height: 120px !important;
-    left: 10px;
-    top: 5px;
-    position: relative;
+#earth {
+
+    background-image: url(../img/earth.gif);
+    background-size: cover;
     margin-left: auto;
     margin-right: auto;
+    height: 100%;
 }
 .footer-panel {
-    min-height: 300px !important;
+//    min-height: 300px !important;
 }
 .panel-height-160  {
     height: 160px !important;
 }
+
+.sight-link:hover {
+    opacity: 0.8;
+    
+}
+
 .nav-panel {
     border-top: 1px solid gray;
     border-right: 1px solid gray;
@@ -94,4 +130,53 @@ h1, h2, h3, h4, h5, h6 {
 .science-corner {
     
  
+}
+
+.query-panel {
+
+    height: 100%;
+    
+}
+
+.wolf {
+
+    background-image: url(../img/wolf.jpg);
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+
+}
+.polarbear {
+
+    background-image: url(../img/polarbear.jpg);
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+
+}
+.arctic-fox {
+
+    background-image: url(../img/arctic_fox.jpg);
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+
+}
+#continue {
+    font-weight: bolder;
+    font-size: 38px;
+
+}
+
+/** utility */
+
+
+
+.bw {
+    -webkit-filter: grayscale(90%);
+    filter: grayscale(90%);
+    filter: brightness(80%);
 }
