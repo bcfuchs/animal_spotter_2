@@ -15,7 +15,16 @@
     <script type="text/javascript" src="js/lawnchair.js"></script>
     <script type="text/javascript" src="js/photo.js"></script>
     <script type="text/javascript" src="js/anspot.js"></script>    
+    <style>
+      .row.map-container {
+      height: 60%;
 
+      }
+      .row.location {
+      height: 20%;
+
+      }
+    </style>
   </head>
   <body>
     <div id="wrap" class=" black">
@@ -34,15 +43,16 @@
 
 
 	
-	<div class="row species-select">
+	<div class="row location">
 	  <div id="loc" class="col-xs-12 col-md-12 query-panel query-panel" >
 	    
 	  </div>
-	  
-
-	  </div>	  
-
-	
+	</div>
+		<div class="row map-container">
+	  <div id="map" class="col-xs-12 col-md-12 query-panel" >
+	    
+	  </div>
+	</div>
       </div>
       
       <div class="container footer-container green">
@@ -64,6 +74,8 @@
       </script>
     </div>
   </body>
+      <script src="https://maps.googleapis.com/maps/api/js"></script>
+      <script src="js/gmaps.js"></script>
   <script>
 
 ! function() {
@@ -74,32 +86,44 @@ var location = function(cb){
 
     var onSuccess = function(position) {
 
- cb('Latitude: '          + position.coords.latitude          + '<br/>' +
- 'Longitude: '         + position.coords.longitude         + '<br/>' +
- 'Altitude: '          + position.coords.altitude          + '<br/>' +
- 'Accuracy: '          + position.coords.accuracy          + '<br/>' +
- 'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '<br/>' +
- 'Heading: '           + position.coords.heading           + '<br/>' +
- 'Speed: '             + position.coords.speed             + '<br/>' +
- 'Timestamp: '         + position.timestamp                + '<br/>');
+ cb('Latitude: '          + position.coords.latitude          + ', ' +
+ 'Longitude: '         + position.coords.longitude         + ', ' +
+ 'Altitude: '          + position.coords.altitude          + ', ' +
+ 'Accuracy: '          + position.coords.accuracy          + ', ' +
+ 'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + ', ' +
+ 'Heading: '           + position.coords.heading           + ', ' +
+ 'Speed: '             + position.coords.speed             + ', ' +
+ 'Timestamp: '         + position.timestamp                + ', ',position);
 
 }
  var onError = function(error) {
-  cb('code: '    + error.code    + '<br/>' +
-  'message: ' + error.message + '<br/>');
+  cb('code: '    + error.code    + ', ' +
+  'message: ' + error.message + ', ');
  }
 
-  navigator.geolocation.getCurrentPosition(onSuccess, onError);
+  navigator.geolocation.getCurrentPosition(onSuccess, onError,{ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
 
 }
 
 
 
 $(document).ready(function(){
-   var addLoc = function(m){
-         console.log(m);
+   var addLoc = function(m,pos){
+         var lon = pos.coords.longitude;
+         var lat = pos.coords.latitude;
+var map = new GMaps({
+div: '#map',
+lat: lat,
+lng: lon,
+zoom: 6,
+                        });
+console.log(m);
         $("#loc").html(m) };
-   location(addLoc);
+console.log("finding location");
+
+location(addLoc);
+
+
 });
 
 }()
