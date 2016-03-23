@@ -3,10 +3,12 @@
 document.addEventListener("deviceready",anspot,false);
     var hover_species,save_species_select;
     function anspot() {
+
 	console.log("animal spotter !");
+	$(document).ready(function(){
 	click_species();
 	save_species_select();
-	
+	});
     }
 
     save_species_select = function() {
@@ -41,6 +43,7 @@ document.addEventListener("deviceready",anspot,false);
     }
     click_species = function(){
 	console.log('setting up click species !');
+
 	$(".species-select").click(function(){
 	    console.log("clicked specsel");
 	    $(".query-panel-img").addClass('bw')
@@ -51,6 +54,7 @@ document.addEventListener("deviceready",anspot,false);
     }
 
     var storage_get = function(name,key,cb){
+	console.log('lawn get ' + name + ' ' + key);
 	Lawnchair({name:name},function(){
 	    this.get('species-type', function(d) {
 		cb(d);
@@ -61,4 +65,5 @@ document.addEventListener("deviceready",anspot,false);
 
     window.storage_get = storage_get
 
+    
 }()
