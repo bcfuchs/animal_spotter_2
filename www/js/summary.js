@@ -5,6 +5,7 @@
 	do_summary = function() {
 	    var make_summary = function(t,d){
 		var sel = "#"+t;
+		console.log(t);
 		$(sel).html(JSON.stringify(d.value));
 		$(sel).data('s-data',d.value);
 		$(sel).attr('data-sighting-type',t);
@@ -36,7 +37,7 @@
                     storage_put('sightings',sighting,function(d){console.log(d)});  
 		}
 		add_to_sighting();
-				window.location.href = $(this).attr("data-next");
+		window.location.href = $(this).attr("data-next");
 	    });
 	    
 	}
