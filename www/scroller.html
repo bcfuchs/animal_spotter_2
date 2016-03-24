@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+    <link rel="stylesheet" type="text/css" href="css/anspot.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <title>Animal Spotter</title>
+    <script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+    <script type="text/javascript" src="js/lawnchair.js"></script>
+    <script type="text/javascript" src="js/photo.js"></script>
+    <script type="text/javascript" src="js/anspot.js"></script>    
+
+  </head>
+  <body>
+    <div id="wrap" class=" black">
+      <!--
+	  <div id="splash-image"></div>
+	  -->
+      <div class="container title-container green">
+
+	<div class="row instructions">
+	  <h2 class="page-title">Animal Spotter: <span id="title-type">Scroller</span></h2>
+	</div>
+      </div>
+      
+      <div class="container main-container scroller-container blue">
+
+	
+	<div class="row ">
+	  <div class="col-xs-12 col-md-12 query-panel">
+	    <style>
+	      .scroller-container  ul{height:90%; width:90%;}
+	      .scroller-container ul {overflow:hidden; overflow-y:scroll;}
+	    </style>
+	    <ul class="list-group" id='scroll-1'>
+	      <li id="cloner" class="list-group-item">Cras justo odio</li>
+	      <li class="list-group-item">Dapibus ac facilisis in</li>
+	      <li class="list-group-item">Morbi leo risus</li>
+	      <li class="list-group-item">Porta ac consectetur ac</li>
+	      <li class="list-group-item">Vestibulum at eros</li>
+	      	      <li class="list-group-item">Cras justo odio</li>
+	      <li class="list-group-item">Dapibus ac facilisis in</li>
+	      <li class="list-group-item">Morbi leo risus</li>
+	      <li class="list-group-item">Porta ac consectetur ac</li>
+	      <li class="list-group-item">Vestibulum at eros</li>
+	      	      <li class="list-group-item">Cras justo odio</li>
+	      <li class="list-group-item">Dapibus ac facilisis in</li>
+	      <li class="list-group-item">Morbi leo risus</li>
+	      <li class="list-group-item">Porta ac consectetur ac</li>
+	      <li class="list-group-item">Vestibulum at eros</li>
+	      	      <li class="list-group-item">Cras justo odio</li>
+	      <li class="list-group-item">Dapibus ac facilisis in</li>
+	      <li class="list-group-item">Morbi leo risus</li>
+	      <li class="list-group-item">Porta ac consectetur ac</li>
+	      <li class="list-group-item">Vestibulum at eros</li>
+	      	      <li class="list-group-item">Cras justo odio</li>
+	      <li class="list-group-item">Dapibus ac facilisis in</li>
+	      <li class="list-group-item">Morbi leo risus</li>
+	      <li class="list-group-item">Porta ac consectetur ac</li>
+	      <li class="list-group-item">Vestibulum at eros</li>
+	      	      <li class="list-group-item">Cras justo odio</li>
+	      <li class="list-group-item">Dapibus ac facilisis in</li>
+	      <li class="list-group-item">Morbi leo risus</li>
+	      <li class="list-group-item">Porta ac consectetur ac</li>
+	      <li class="list-group-item">Vestibulum at eros</li>
+	      </ul>
+
+	  </div>
+
+	</div>
+	
+      </div>
+      
+      <div class="container footer-container green">
+	<div class="row">
+	  <div class="col-xs-12 col-md-12 green footer-panel">
+	    <div class="next-container">
+	      <h2><a href="location.html">Continue <span id="continue">&rarr;</span></a></h2>
+	    </div>
+	    
+	  </div>
+	</div>
+      </div>
+
+
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+      <script>
+	$("#hidewrap").click(function(){ $("#hideme").show()});
+      </script>
+    </div>
+  </body>
+
+  <script>
+    ! function() {
+    $(document).on('deviceready',function(){
+    var cnt = 0;
+    var add_els = function(top,sel,n) {
+		var els = []
+
+		for (var i = 0; i < n;i++) {
+
+		    $(top).append($(sel).clone().html("new div " + i + " " + cnt));
+		    
+		}
+	    cnt = cnt +1;
+	    }
+
+	infScroller("#scroll-1",function(){add_els('#scroll-1','#cloner',10)});   
+});
+}()
+  </script>
+</html>

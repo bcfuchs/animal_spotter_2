@@ -27,7 +27,10 @@
       <div class="container title-container green">
 
 	<div class="row">
-	  <h2 class="page-title">Animal Spotter</h2>
+	  <span class="page-title">Animal Spotter</span>
+<a href="links.html"><button type="button" class="btn btn-default" aria-label="settings">
+	  <span class="glyphicon glyphicon-cog"></span>
+</button></a>
 	</div>
       </div>
       
@@ -62,7 +65,13 @@
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
       <script>
-	$("#hidewrap").click(function(){ $("#hideme").show()});
+	! function(){
+	$(document).on("deviceready",function(){
+	
+
+	})
+	}()
+	//	$("#hidewrap").click(function(){ $("#hideme").show()});
       </script>
     </div>
   </body>

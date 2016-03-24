@@ -36,14 +36,14 @@
 	      <fieldset>
 		<!-- Multiple Radios (inline) -->
 		<div class="form-group">
-		  <label class="col-md-4 control-label" for="radios">Was the animal injured?</label>
+		  <label class="col-md-4 control-label" for="injury">Was the animal injured?</label>
 		  <div class="col-md-4">
 		    <label class="radio-inline" for="radios-0">
-		      <input type="radio" name="radios" id="radios-0" value="yes" checked="checked">
+		      <input type="radio" name="injury" id="radios-0" value="yes">
 		      yes
 		    </label>
 		    <label class="radio-inline" for="radios-1">
-		      <input type="radio" name="radios" id="radios-1" value="no">
+		      <input type="radio" name="injury" id="radios-1" value="no" checked="checked">
 		      no
 		    </label>
 		  </div>
@@ -60,9 +60,9 @@
 
 		<!-- Textarea -->
 		<div class="form-group">
-		  <label class="col-md-4 control-label" for="observations">Further observations</label>
+		  <label class="col-md-4 control-label" for="observations">Anything else?</label>
 		  <div class="col-md-4">
-		    <textarea class="form-control" id="observations" name="observations">further observations</textarea>
+		    <textarea class="form-control span12" rows=10 id="observations" name="observations"></textarea>
 		  </div>
 		</div>
 		<!-- Button -->
@@ -86,7 +86,7 @@
       <div class="row">
 	<div class="col-xs-12 col-md-12 green footer-panel">
 	  <div class="next-container">
-	    <h2><a href="location.html">Continue <span id="continue">&rarr;</span></a></h2>
+	    <h2><a href="summary.html">Continue <span id="continue">&rarr;</span></a></h2>
 	  </div>
 	  
 	</div>
@@ -106,7 +106,7 @@
   ! function() {
 
   $(document).ready(function(){
-
+var log = function(m){console.log(m)}
   $("#save").click(function(e){
 // no submit
   e.preventDefault();
@@ -117,7 +117,7 @@
     console.log( serjson);
      $(this).removeClass("btn-primary").addClass("btn-success");
      $(this).html("Saved!");
-
+  storage_put('anspot',{key:'observations',value:serjson},log);
 
   });
 

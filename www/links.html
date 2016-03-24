@@ -25,36 +25,24 @@
       <div class="container title-container green">
 
 	<div class="row instructions">
-	  <h2 class="page-title">Animal Spotter: <span id="title-type">Beach Alert</span></h2>
+	  <h2 class="page-title">Animal Spotter: <span id="title-type">Links</span></h2>
 	</div>
       </div>
       
       <div class="container main-container species-container blue">
-	<div class="row">
-	  <div class="col-xs-12 col-md-12 query-panel">
-	    <p>Please choose a species, using the images below.</p>
-	  </div>
-	</div>
-	<div class="row species-select" data-species="arctic fox">
-	  
-	  <div class="col-xs-6 col-md-6 query-panel query-panel-img arctic-fox"></div>
+	  <div class="col-xs-6 col-md-6 query-panel "></div>
+
+	
+	<div class="row links-row">
 
 	  <div class="col-xs-6 col-md-6 query-panel">
-	    <p>(Hints for id'ing this species)</p>
-	  </div>
-	</div>
-	
-	<div class="row species-select" data-species="polar bear">
-	  <div class="col-xs-6 col-md-6 query-panel query-panel-img  polarbear"></div>
-	  <div class="col-xs-6 col-md-6 query-panel">
-	    <p>(Hints for id'ing this species 2)</p>
-	  </div>
-	</div>
-	
-	<div class="row species-select" data-species="wolf">
-	  <div class="col-xs-6 col-md-6 query-panel query-panel-img  wolf"></div>
-	  <div class="col-xs-6 col-md-6 query-panel">
-	    <p>(Hints for id'ing this species)</p>
+	    <ul class="list-group liks">
+	      <li class="list-group-item"><a href="scroller.html">scroller</a></li>
+	      <li class="list-group-item">B</li>
+	      <li class="list-group-item">CMorbi leo risus</li>
+	      <li class="list-group-item">D</li>
+	      <li class="list-group-item">Es</li>
+	      </ul>
 	  </div>	  
 	</div>
 	
@@ -82,7 +70,6 @@
   <script>
 
 ! function() {
-$(document).ready(function(){
 var make_title = function(d){
 if (d['value'].match('sea')) {
     $("#title-type").html("Beach");
@@ -97,10 +84,10 @@ if (d['value'].match('land')) {
 
 }
 }
-storage_get('anspot','species-type',function(d){ make_title(d) });
+
+//storage_get('species-select','species-type',function(d){ make_title(d) });
 
 
-});
 }()
   </script>
 </html>

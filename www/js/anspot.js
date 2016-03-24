@@ -47,23 +47,46 @@ document.addEventListener("deviceready",anspot,false);
 	$(".species-select").click(function(){
 	    console.log("clicked specsel");
 	    $(".query-panel-img").addClass('bw')
+	    var species = $(this).attr("data-species");
 	    $(this).find(".query-panel-img").removeClass('bw')
-	    
+	    storage_put('anspot',{key:'species',value:species},function(d){console.log(d)});
 
 	});
     }
 
     var storage_get = function(name,key,cb){
-	console.log('lawn get ' + name + ' ' + key);
+	console.log('lawn get name:' + name + ' key: ' + key);
 	Lawnchair({name:name},function(){
-	    this.get('species-type', function(d) {
+	    this.get(key, function(d) {
 		cb(d);
 	    })
 	})
 
     }
 
-    window.storage_get = storage_get
+     var storage_put = function(name,object,cb){
+	console.log('lawn put ' + name );
+	 Lawnchair({name:name},function(){
+	     this.save(object,cb);
+	})
 
+    }
+
+    var add_to_scroller = function(scrollSel,cb) {
+	
+	$(scrollSel).on('scroll',function(ev) {
+	    
+	    if ($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight) {
+		cb.call(this)
+		
+	    }
+	});
+	
+    }
+
+   
+    window.storage_get = storage_get;
+    window.storage_put = storage_put;
+    window.infScroller = add_to_scroller;
     
 }()

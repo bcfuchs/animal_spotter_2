@@ -107,10 +107,11 @@ var location = function(cb){
 
 
 
-$(document).ready(function(){
+$(document).on('deviceready',function(){
    var addLoc = function(m,pos){
          var lon = pos.coords.longitude;
          var lat = pos.coords.latitude;
+          var location = {lat:lat,lon:lon}
 var map = new GMaps({
 div: '#map',
 lat: lat,
@@ -118,13 +119,21 @@ lng: lon,
 zoom: 6,
                         });
 console.log(m);
-        $("#loc").html(m) };
+$("#loc").html(m)
+storage_put('anspot',{key:'location',value:location},function(d){console.log(d)});
+
+
+};
+
+
+
 console.log("finding location");
 
 location(addLoc);
 
 
 });
+
 
 }()
   </script>

@@ -25,38 +25,22 @@
       <div class="container title-container green">
 
 	<div class="row instructions">
-	  <h2 class="page-title">Animal Spotter: <span id="title-type">Beach Alert</span></h2>
+	  <h2 class="page-title">Animal Spotter: <span id="title-type">Summary</span></h2>
 	</div>
       </div>
       
       <div class="container main-container species-container blue">
-	<div class="row">
-	  <div class="col-xs-12 col-md-12 query-panel">
-	    <p>Please choose a species, using the images below.</p>
-	  </div>
-	</div>
-	<div class="row species-select" data-species="arctic fox">
-	  
-	  <div class="col-xs-6 col-md-6 query-panel query-panel-img arctic-fox"></div>
 
-	  <div class="col-xs-6 col-md-6 query-panel">
-	    <p>(Hints for id'ing this species)</p>
+	
+	<div class="row">
+	  <div id="summary" class="col-xs-12 col-md-12 query-panel">
+	    <div id="species-type"></div>
+	    <div id="species"></div>
+	    <div id="location"></div>
+	    <div id="observations"></div>
 	  </div>
 	</div>
-	
-	<div class="row species-select" data-species="polar bear">
-	  <div class="col-xs-6 col-md-6 query-panel query-panel-img  polarbear"></div>
-	  <div class="col-xs-6 col-md-6 query-panel">
-	    <p>(Hints for id'ing this species 2)</p>
-	  </div>
-	</div>
-	
-	<div class="row species-select" data-species="wolf">
-	  <div class="col-xs-6 col-md-6 query-panel query-panel-img  wolf"></div>
-	  <div class="col-xs-6 col-md-6 query-panel">
-	    <p>(Hints for id'ing this species)</p>
-	  </div>	  
-	</div>
+
 	
       </div>
       
@@ -64,7 +48,7 @@
 	<div class="row">
 	  <div class="col-xs-12 col-md-12 green footer-panel">
 	    <div class="next-container">
-	      <h2><a href="location.html">Continue <span id="continue">&rarr;</span></a></h2>
+	      <h2><a href="index.html">Continue <span id="continue">&rarr;</span></a></h2>
 	    </div>
 	    
 	  </div>
@@ -75,32 +59,28 @@
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
       <script>
-	$("#hidewrap").click(function(){ $("#hideme").show()});
+
       </script>
     </div>
   </body>
   <script>
 
 ! function() {
-$(document).ready(function(){
-var make_title = function(d){
-if (d['value'].match('sea')) {
-    $("#title-type").html("Beach");
-}
-if (d['value'].match('air')) {
-    $("#title-type").html("Birds");
+$(document).on('deviceready',function(){
+var do_summary = function() {
+var make_summary = function(t,d){
+   $('#'+t).html(JSON.stringify(d['value']));
 
 }
 
-if (d['value'].match('land')) {
-    $("#title-type").html("Land");
-
+storage_get('anspot','species-type',function(d){ make_summary('species-type',d) });
+storage_get('anspot','species',function(d){ make_summary('species',d) });
+storage_get('anspot','location',function(d){ make_summary('location',d) });
+storage_get('anspot','observations',function(d){ make_summary('observations',d) });
 }
-}
-storage_get('anspot','species-type',function(d){ make_title(d) });
-
-
+do_summary();
 });
+
 }()
   </script>
 </html>

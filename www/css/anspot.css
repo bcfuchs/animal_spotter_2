@@ -119,9 +119,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 .page-title {
  
-
+    font-weight: bold;
+    font-size:  32px;
+    float: right;
 }
+.top-menu-btn {
 
+    float: right;
+    margin: 5px;
+    
+}
 .green {
 
    
@@ -133,6 +140,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .query-panel {
+
+    height: 100%;
+    
+}
+
+.scroller-container {
+
+    height: 60%;
+}
+.scroller-container .row {
+    height: 100%;
+
+}
+
+
+.scroller-panel {
 
     height: 100%;
     
