@@ -39,36 +39,27 @@
 	      .scroller-container ul {overflow:hidden; overflow-y:scroll;}
 	    </style>
 	    <ul class="list-group" id='scroll-1'>
-	      <li id="cloner" class="list-group-item">Cras justo odio</li>
-	      <li class="list-group-item">Dapibus ac facilisis in</li>
-	      <li class="list-group-item">Morbi leo risus</li>
-	      <li class="list-group-item">Porta ac consectetur ac</li>
-	      <li class="list-group-item">Vestibulum at eros</li>
-	      	      <li class="list-group-item">Cras justo odio</li>
-	      <li class="list-group-item">Dapibus ac facilisis in</li>
-	      <li class="list-group-item">Morbi leo risus</li>
-	      <li class="list-group-item">Porta ac consectetur ac</li>
-	      <li class="list-group-item">Vestibulum at eros</li>
-	      	      <li class="list-group-item">Cras justo odio</li>
-	      <li class="list-group-item">Dapibus ac facilisis in</li>
-	      <li class="list-group-item">Morbi leo risus</li>
-	      <li class="list-group-item">Porta ac consectetur ac</li>
-	      <li class="list-group-item">Vestibulum at eros</li>
-	      	      <li class="list-group-item">Cras justo odio</li>
-	      <li class="list-group-item">Dapibus ac facilisis in</li>
-	      <li class="list-group-item">Morbi leo risus</li>
-	      <li class="list-group-item">Porta ac consectetur ac</li>
-	      <li class="list-group-item">Vestibulum at eros</li>
-	      	      <li class="list-group-item">Cras justo odio</li>
-	      <li class="list-group-item">Dapibus ac facilisis in</li>
-	      <li class="list-group-item">Morbi leo risus</li>
-	      <li class="list-group-item">Porta ac consectetur ac</li>
-	      <li class="list-group-item">Vestibulum at eros</li>
-	      	      <li class="list-group-item">Cras justo odio</li>
-	      <li class="list-group-item">Dapibus ac facilisis in</li>
-	      <li class="list-group-item">Morbi leo risus</li>
-	      <li class="list-group-item">Porta ac consectetur ac</li>
-	      <li class="list-group-item">Vestibulum at eros</li>
+	      <li id="cloner" class="list-group-item hideme">
+		<div class="sighting-card container">
+		  <div class="row species">
+		    <div class="sx-2 head"></div>
+		    <div class="sx-10 content"></div>
+		  </div>
+
+		  <div class="row location">
+		    <div class="sx-2 head">location</div>
+		    <div class="sx-10 content"></div>
+		  </div>
+		  <div class="row time">
+		    <div class="sx-2 head ">time</div>
+		    <div class="sx-10 content"></div>
+		  </div>
+		  <div class="row observations">
+		    <div class="sx-2 head">observations</div>
+		    <div class="sx-10 content"></div>
+		  </div>
+		</div>
+	      </li>
 	      </ul>
 
 	  </div>
@@ -81,7 +72,7 @@
 	<div class="row">
 	  <div class="col-xs-12 col-md-12 green footer-panel">
 	    <div class="next-container">
-	      <h2><a href="location.html">Continue <span id="continue">&rarr;</span></a></h2>
+	      <h2><a href="index.html">Make another sighting <span id="continue">&rarr;</span></a></h2>
 	    </div>
 	    
 	  </div>
@@ -97,23 +88,5 @@
     </div>
   </body>
 
-  <script>
-    ! function() {
-    $(document).on('deviceready',function(){
-    var cnt = 0;
-    var add_els = function(top,sel,n) {
-		var els = []
-
-		for (var i = 0; i < n;i++) {
-
-		    $(top).append($(sel).clone().html("new div " + i + " " + cnt));
-		    
-		}
-	    cnt = cnt +1;
-	    }
-
-	infScroller("#scroll-1",function(){add_els('#scroll-1','#cloner',10)});   
-});
-}()
-  </script>
+  <script src="js/scroller.js">  </script>
 </html>

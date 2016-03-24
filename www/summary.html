@@ -34,8 +34,10 @@
 	
 	<div class="row">
 	  <div id="summary" class="col-xs-12 col-md-12 query-panel">
-	    <div id="species-type"></div>
+	    <div id="time"></div>
 	    <div id="species"></div>
+	    <div id="species-type"></div>
+
 	    <div id="location"></div>
 	    <div id="observations"></div>
 	  </div>
@@ -48,7 +50,9 @@
 	<div class="row">
 	  <div class="col-xs-12 col-md-12 green footer-panel">
 	    <div class="next-container">
-	      <h2><a href="index.html">Continue <span id="continue">&rarr;</span></a></h2>
+	      <a href="scroller.html"><h2 id="manage-sightings" data-next="scroller.html">Manage sightings <span id="continue">&rarr;</span></div></h2></a>
+	    
+	      <h2 id="save-sighting" data-next="index.html">Make another sighting <span id="continue">&rarr;</span></div></h2>
 	    </div>
 	    
 	  </div>
@@ -63,24 +67,6 @@
       </script>
     </div>
   </body>
-  <script>
+  <script src="js/summary.js"></script>
 
-! function() {
-$(document).on('deviceready',function(){
-var do_summary = function() {
-var make_summary = function(t,d){
-   $('#'+t).html(JSON.stringify(d['value']));
-
-}
-
-storage_get('anspot','species-type',function(d){ make_summary('species-type',d) });
-storage_get('anspot','species',function(d){ make_summary('species',d) });
-storage_get('anspot','location',function(d){ make_summary('location',d) });
-storage_get('anspot','observations',function(d){ make_summary('observations',d) });
-}
-do_summary();
-});
-
-}()
-  </script>
 </html>

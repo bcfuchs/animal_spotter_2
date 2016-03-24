@@ -42,7 +42,7 @@ var Lawnchair = function (options, callback) {
             if (adapter) break 
         }
     } 
-    
+    console.log(adapter);
     // we have failed 
     if (!adapter) throw 'No valid adapter.' 
     
@@ -161,6 +161,7 @@ Lawnchair.prototype = {
 // not chainable: valid, keys
 //
 Lawnchair.adapter('dom', (function() {
+    console.log('dom adapter!!!');
     var storage = window.localStorage
     // the indexer is an encapsulation of the helpers needed to keep an ordered index of the keys
     var indexer = function(name) {
