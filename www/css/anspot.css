@@ -9,9 +9,9 @@ html,body {
     height: 100%;
 }
 
-.20px {
+.f-20px {
 
-    font-size: 20px;
+    font-size: 22px !important;;
 }
 
 .black {
