@@ -158,6 +158,30 @@ h1, h2, h3, h4, h5, h6 {
 
     display: none !important;
 }
+/** sighting card */
+
+.sighting-card-container .final {
+
+    height: 220px;
+    
+}
+
+.sighting-card-container .head {
+    font-weight: bold;
+    text-decoration: underline;
+
+}
+.hide-sighting-card {
+
+    display: none !important;
+}
+
+.sighting-card-expanded {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+}
 .scroller-panel {
 
     height: 100%;

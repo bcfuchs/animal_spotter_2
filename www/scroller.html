@@ -35,15 +35,20 @@
 	      .scroller-container  ul{height:100%; width:100%;}
 	      .scroller-container ul {overflow:hidden; overflow-y:scroll;}
 	    </style>
-	    <ul class="list-group" id='scroll-1'>
-	      <li id="cloner" class="list-group-item hideme">
-		<div class="sighting-card container">
+	    <div class="list-group" id='scroll-1'>
+	      <a href="#" id="cloner" class="list-group-item hideme sighting-card-container">
+		<div class="sighting-card-summary">
+		  <span class="species-sum"></span>
+		  <span class="date-sum"></span>
+
+		</div>
+		<div class="sighting-card container">		
 		  <div class="row species">
-		    <div class="sx-2 head"></div>
+		    <div class="sx-2 head">species</div>
 		    <div class="sx-10 content"></div>
 		  </div>
 
-		  <div class="row location">
+		  <div class="row location hideme">
 		    <div class="sx-2 head">location</div>
 		    <div class="sx-10 content"></div>
 		  </div>
@@ -51,13 +56,16 @@
 		    <div class="sx-2 head ">time</div>
 		    <div class="sx-10 content"></div>
 		  </div>
-		  <div class="row observations">
+		  <div class="row observations hideme">
 		    <div class="sx-2 head">observations</div>
 		    <div class="sx-10 content"></div>
 		  </div>
+		  <div class="row final hideme">
+		    <div class="sx-12 sm-12 content"></div>
+		  </div>
 		</div>
-	      </li>
-	      </ul>
+	      </a>
+	      </div>
 
 
 	
@@ -77,11 +85,12 @@
 
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
+      <script src="js/scroller.js">  </script>
       <script>
-	$("#hidewrap").click(function(){ $("#hideme").show()});
+
       </script>
     </div>
   </body>
 
-  <script src="js/scroller.js">  </script>
+
 </html>
