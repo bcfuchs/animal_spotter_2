@@ -25,18 +25,24 @@
       <div class="container title-container green">
 
 	<div class="row instructions">
-	  <h2 class="page-title">Animal Spotter: <span id="title-type">Template</span></h2>
+	  <h2 class="page-title">Animal Spotter: <span id="title-type">Photo</span></h2>
 	</div>
       </div>
       
-      <div class="container main-container species-container blue">
+      <div class="container main-container photo-container white">
 
 	
 	<div class="row species-select">
-	  <div class="col-xs-12 col-md-12 query-panel "></div>
-	  Content here
+	  <div class="col-xs-12 col-md-12 query-panel ">
+	    <img class="pulse" onclick="capturePhoto();" id="cam-icon" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiBoZWlnaHQ9IjMycHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxnPjxwYXRoIGQ9Ik0yOSwyOEgzYy0wLjU1MiwwLTEtMC40NDctMS0xVjEzYzAtMC41NTIsMC40NDgtMSwxLTFzMSwwLjQ0OCwxLDF2MTNoMjRWMTBoLTVjLTAuMjY2LDAtMC41Mi0wLjEwNS0wLjcwNy0wLjI5M0wxOC41ODYsNiAgIGgtNS4xNzJMOS43MDcsOS43MDdDOS41Miw5Ljg5NSw5LjI2NSwxMCw5LDEwSDNjLTAuNTUyLDAtMS0wLjQ0OC0xLTFzMC40NDgtMSwxLTFoNS41ODZsMy43MDctMy43MDdDMTIuNDgsNC4xMDUsMTIuNzM1LDQsMTMsNGg2ICAgYzAuMjY2LDAsMC41MiwwLjEwNSwwLjcwNywwLjI5M0wyMy40MTQsOEgyOWMwLjU1MywwLDEsMC40NDgsMSwxdjE4QzMwLDI3LjU1MywyOS41NTMsMjgsMjksMjh6Ii8+PC9nPjxnPjxwYXRoIGQ9Ik0xNiwyNGMtMy4zMDksMC02LTIuNjkxLTYtNnMyLjY5MS02LDYtNnM2LDIuNjkxLDYsNlMxOS4zMDksMjQsMTYsMjR6IE0xNiwxNGMtMi4yMDYsMC00LDEuNzk0LTQsNGMwLDIuMjA2LDEuNzk0LDQsNCw0ICAgYzIuMjA2LDAsNC0xLjc5NCw0LTRDMjAsMTUuNzk0LDE4LjIwNiwxNCwxNiwxNHoiLz48L2c+PC9zdmc+"/>
+	  </div>
+	  <div class="col-xs-12 col-md-12 query-panel ">
+	    <div id="image-gallery">
+	    <!-- needs to know which image is being processed.... -->
+	    
+	    </div>
+	  </div>
 	</div>
-	
       </div>
       
       <div class="container footer-container green">
@@ -60,11 +66,11 @@
   </body>
   <script>
 
-! function() {
+    ! function() {
 
-//storage_get('species-select','species-type',function(d){ make_title(d) });
+    //storage_get('species-select','species-type',function(d){ make_title(d) });
 
 
-}()
+    }()
   </script>
 </html>

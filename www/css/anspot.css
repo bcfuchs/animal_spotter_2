@@ -15,6 +15,10 @@ html,body {
 .blue {
    background:     #2efdfe; 
 }
+
+.white {
+    background: white;
+}
 .title-container {
 
     height:15%;
@@ -182,11 +186,75 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 4px;
 
 }
+
+.sighting-card .obs-label {
+
+    padding-right: 20px;
+    font-weight: bold;
+}
+.sighting-card .obs-label:after {
+
+    content: ":";
+}
+
+.species-sum:after {
+
+}
+.species-sum {
+    font-weight: bold;
+    color:blue;
+    padding-right: 10px;
+
+}
+/** END sighting-card */
+
+/** photo page */
+.photo-container {
+
+
+
+}
+
+#image-gallery img {
+    height: 100px;
+    width: auto;
+
+}
+
+.gallery-image-container {
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+
+}
+
+/** END photo page */
+
+/** scroller page */
 .scroller-panel {
 
     height: 100%;
     
 }
+// the thumb nail
+//TODO a badge would be better.
+.photo-sum  img {
+    height: 100px;
+    width: auto;
+
+}
+
+.photo-sum {
+    display: inline;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+
+}
+
+
+/** END scroller page */
+
 
 .wolf {
 

@@ -35,9 +35,8 @@ function onPhotoDataSuccess(imageData) {
     // The in-line CSS rules are used to resize the image
     //
     smallImage.src = "data:image/jpeg;base64," + imageData;
-    saveData(imageData,id,function(r) {console.log(r)});
+    saveData(imageData,id,function(r) {console.log("got an image!")});
     var gall =     document.getElementById('image-gallery');
-    
     a.appendChild(smallImage);
     div.appendChild(a);
     gall.appendChild(div);
@@ -45,12 +44,14 @@ function onPhotoDataSuccess(imageData) {
 }
 
 function saveData(d,id,cb) {
-
+    // TODO store in a separate collection -- there might be more than one
+    storage_put('anspot',{key:'photo',value:d},cb);
+    /**    
     Lawnchair(function(){
 
 	    this.save({image:d,id:id,key:id},cb);
 	});
-
+*/
 }
 // Called when a photo is successfully retrieved
 //

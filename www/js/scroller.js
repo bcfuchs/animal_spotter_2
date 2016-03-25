@@ -20,13 +20,30 @@
 	    
 	    infScroller("#scroll-1",function(){add_els('#scroll-1','#cloner',10)});   
 	}
-	var build_card_summary = function(el,species,date) {
+	var build_card_summary = function(el,species,date,image) {
 	    $(el).find(".sighting-card-summary .date-sum").html(date);
 	    $(el).find(".sighting-card-summary .species-sum").html(species);
+	    $(el).find(".sighting-card-summary .photo-sum img").attr('src',"data:image/jpeg;base64," + data);
 
 	}
+	var format_observations = function(obs) {
+	    var out = $("<div></div>");
+	    console.log(obs);
+	    for (var i =0; i < obs.length; i++) {
+		console.log(obs[i].name);
+		var label = $("<span></span>").html(obs[i].name).addClass("obs-label");
+		var content = $("<span></span>").html(obs[i].value).addClass('obs-content');
+		var div = $("<div></div>").append(label).append(content);
+		out.append(div);
+	    }
+	    console.log(out);
+	    return out
 
+	}
 	var build_card = function(el,species,date,observations,location,id) {
+
+	    observations = format_observations(observations);
+
 	    $(el).find(".time .content").html(date);
 	    $(el).find(".location .content").html(location);
 	    $(el).find(".observations .content").html(observations);
@@ -50,7 +67,7 @@
 		    var date = (new Date(d.time)).toDateString() + " " + hms;
 		    var location = d.location.lat + " " + d.location.lon;
 		    var species = d.species;
-		    var observations = JSON.stringify(d.observations);
+		    var observations = d.observations;
 		    var id = d.time;
 		    
 		    // summary card
@@ -91,21 +108,48 @@
 	    storage_keys('sightings',proc);
 	    
 	} // var test_get_sightings
+
+	// display the extended card on click
 	var display_card = function(){
 	    $('.sighting-card-container').each(function(){
+		
 		$(this).click(function(){
-		    // for if we want a separate page for editing...
-		    var id = $(this).attr("data-sighting-id");
-		    // hide rest, show this one
-		    $('.sighting-card-container').not(this).addClass('hide-sighting-card');
-		    		    // expand the div show the controls. 
-		    $(this).find(".final").removeClass('hideme');
-		    $(this).addClass('sighting-card-expanded');
-		  
+		    var expanded = $(this).data("expanded");
+
+		    if (expanded === false) {
+
+			// for if we want a separate page for editing...
+			var id = $(this).data("data-sighting-id");
+
+			// hide rest, show this one
+			$('.sighting-card-container').not(this).addClass('hide-sighting-card');
+
+			// remove the active indicator
+			$(this).removeClass("active"); 
+			console.log(this);
+		    	// expand the div show the controls. 
+			$(this).find(".hideme").removeClass('hideme');
+
+			
+			$(this).addClass('sighting-card-expanded');
+		    	// close the expanded card on click
+			$(this).data("expanded",true);
+		    }
+		    else {
+
+
+			$(this).removeClass('.sighting-card-expanded');
+			$(this).find(".sighting-card").addClass("hideme");
+			$('.sighting-card-container').removeClass("active");
+			$(this).addClass("active"); 
+			$(this).data("expanded",false);
+			$('.sighting-card-container').removeClass('hide-sighting-card');
+		    }
 		    
 
 		})
 	    })
+
 	}
 	init_InfScroll();
 	test_get_sightings('#cloner','#scroll-1');
