@@ -6,10 +6,16 @@
 	    var make_summary = function(t,d){
 		var sel = "#"+t;
 		console.log(t);
-		$(sel).html(JSON.stringify(d.value));
+
 		$(sel).data('s-data',d.value);
 		$(sel).attr('data-sighting-type',t);
-		
+		if (t === 'photo') {
+		    
+		    $(sel).find('img').attr('src',"data:image/jpeg;base64," + d.value);
+		}
+		else {
+		    $(sel).html(JSON.stringify(d.value));
+		}
 	    }
 
 	    storage_get('anspot','time',function(d){ make_summary('time',d) });
@@ -17,6 +23,7 @@
 	    storage_get('anspot','species',function(d){ make_summary('species',d) });
 	    storage_get('anspot','location',function(d){ make_summary('location',d) });
 	    storage_get('anspot','observations',function(d){ make_summary('observations',d) });
+	    storage_get('anspot','photo',function(d){ make_summary('photo',d) });
 
 
 	}

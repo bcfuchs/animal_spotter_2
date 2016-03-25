@@ -21,10 +21,12 @@
 	    infScroller("#scroll-1",function(){add_els('#scroll-1','#cloner',10)});   
 	}
 	var build_card_summary = function(el,species,date,image) {
+	    
 	    $(el).find(".sighting-card-summary .date-sum").html(date);
 	    $(el).find(".sighting-card-summary .species-sum").html(species);
-	    $(el).find(".sighting-card-summary .photo-sum img").attr('src',"data:image/jpeg;base64," + data);
-
+	    if (image !== null) {
+		$(el).find(".sighting-card-summary .photo-sum img").attr('src',"data:image/jpeg;base64," + image);
+	    }
 	}
 	var format_observations = function(obs) {
 	    var out = $("<div></div>");
@@ -68,10 +70,11 @@
 		    var location = d.location.lat + " " + d.location.lon;
 		    var species = d.species;
 		    var observations = d.observations;
+		    var photo = d.photo;
 		    var id = d.time;
 		    
 		    // summary card
-		    build_card_summary(el,d.species,date);
+		    build_card_summary(el,d.species,date,photo);
 
 		    // card							   
 		    build_card(el,species,date,observations,location,id);

@@ -135,8 +135,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .green {
 
-   
-    background: #29f62e;
+//    background: #29f62e;
+    background: #a5f9a7;;
 }
 .science-corner {
     
@@ -215,6 +215,9 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+.photo-sum {
+    display: inline-block;
+}
 #image-gallery img {
     height: 100px;
     width: auto;
@@ -227,8 +230,33 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
 
 }
+.photo-gallery-panel {
+    min-height: 200px;
+    color: white;
 
+}
+.photo-container {
+    overflow: hidden;
+    height: 100%;
+}
 /** END photo page */
+
+
+.thumbnail_ans img {
+    height: 50px;
+    width: auto;
+}
+
+/** wrapper to constrain thumbnail */
+
+.thumbnail_ans {
+
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    
+}
+
 
 /** scroller page */
 .scroller-panel {
@@ -236,21 +264,11 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     
 }
+
+
+
 // the thumb nail
-//TODO a badge would be better.
-.photo-sum  img {
-    height: 100px;
-    width: auto;
 
-}
-
-.photo-sum {
-    display: inline;
-    height: 50px;
-    width: 50px;
-    overflow: hidden;
-
-}
 
 
 /** END scroller page */
