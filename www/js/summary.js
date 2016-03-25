@@ -5,16 +5,24 @@
 	do_summary = function() {
 	    var make_summary = function(t,d){
 		var sel = "#"+t;
-		console.log(t);
+		var content = d.value;
+		if (t === 'time') {
+		    var hms = new Date(content).toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
+		    content  = (new Date(content)).toDateString() + " " + hms;
+		    
+		}
+		if (t === "location") {
+		    content = content.lat + " " + content.lon;
 
+		}
+		
 		$(sel).data('s-data',d.value);
 		$(sel).attr('data-sighting-type',t);
-		if (t === 'photo') {
-		    
+		if (t === 'photo') {		
 		    $(sel).find('img').attr('src',"data:image/jpeg;base64," + d.value);
 		}
 		else {
-		    $(sel).html(JSON.stringify(d.value));
+		    $(sel).find(".content").html(content);
 		}
 	    }
 
