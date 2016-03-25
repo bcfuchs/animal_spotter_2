@@ -9,6 +9,12 @@ html,body {
     height: 100%;
 }
 
+.hidden {
+
+    display:none;
+
+}
+
 .f-20px {
 
     font-size: 22px !important;;

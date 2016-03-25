@@ -51,7 +51,12 @@
 	    $(el).find(".observations .content").html(observations);
 	    $(el).find(".species .content").html(species);
 	    $(el).attr('data-sighting-id',id);
+	    $(el).find(".share-btn").click(function(){
 
+		window.plugins.socialsharing.share('Message, subject, image and link', 'The subject', 'https://www.google.nl/images/srpr/logo4w.png', 'http://www.x-services.nl')
+		    
+
+	    });
 	}
 	
 	var test_get_sightings  = function(cloneSel,listSel){
@@ -114,9 +119,7 @@
 
 	// display the extended card on click
 	var display_card = function(){
-	    $('.sighting-card-container').each(function(){
-		
-		$(this).click(function(){
+	    $('.sighting-card-container').click(function(){
 		    var expanded = $(this).data("expanded");
 
 		    if (expanded === false) {
@@ -130,27 +133,35 @@
 			// remove the active indicator
 			$(this).removeClass("active"); 
 			console.log(this);
-		    	// expand the div show the controls. 
-			$(this).find(".hideme").removeClass('hideme');
 
-			
+			// expand the div show the controls. 
+			$(this).find(".hideme").removeClass('hideme');
 			$(this).addClass('sighting-card-expanded');
-		    	// close the expanded card on click
+
+			// move the share button  to top and show it
+			$("#share-target").html($(this).find(".share-btn"));
+			$("#share-target").find(".share-btn").show();
+			
+			
+
+
+			// close the expanded card on click
 			$(this).data("expanded",true);
 		    }
-		    else {
 
+		else {
 
-			$(this).removeClass('.sighting-card-expanded');
-			$(this).find(".sighting-card").addClass("hideme");
-			$('.sighting-card-container').removeClass("active");
-			$(this).addClass("active"); 
-			$(this).data("expanded",false);
-			$('.sighting-card-container').removeClass('hide-sighting-card');
+		    $("#share-target").html();
+		    $(this).removeClass('.sighting-card-expanded');
+		    $(this).find(".sighting-card").addClass("hideme");
+		    $('.sighting-card-container').removeClass("active");
+		    $(this).addClass("active"); 
+		    $(this).data("expanded",false);
+		    $('.sighting-card-container').removeClass('hide-sighting-card');
 		    }
 		    
 
-		})
+	
 	    })
 
 	}

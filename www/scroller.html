@@ -26,7 +26,8 @@
 
 	<div class="row instructions">
 	  <h2 class="page-title">Animal Spotter: <span id="title-type">Scroller</span></h2>
-	  <button onclick="window.plugins.socialsharing.share('Message only')">message only</button>
+	  <div id="share-target"></div>
+
 	</div>
       </div>
       
@@ -64,7 +65,11 @@
 		    <div class="sx-10 content"></div>
 		  </div>
 		  <div class="row final hideme">
-		    <div class="sx-12 sm-12 content"></div>
+		    <div class="sx-12 sm-12 content">
+		    <button class="share-btn btn btn-primary btn-sm hidden">
+		      <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
+		    </button>
+		    </div>
 		  </div>
 		</div>
 	      </a>
