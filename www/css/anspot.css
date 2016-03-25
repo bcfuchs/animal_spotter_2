@@ -244,7 +244,7 @@ h1, h2, h3, h4, h5, h6 {
 .thumbnail_ans img {
     height: 50px;
     width: auto;
-    transform: rotate(90deg); 
+//    transform: rotate(90deg); 
     margin: 3px 0px;
 }
 
