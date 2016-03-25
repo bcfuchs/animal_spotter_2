@@ -215,9 +215,8 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
-.photo-sum {
-    display: inline-block;
-}
+
+
 #image-gallery img {
     height: 100px;
     width: auto;
@@ -245,6 +244,8 @@ h1, h2, h3, h4, h5, h6 {
 .thumbnail_ans img {
     height: 50px;
     width: auto;
+    transform: rotate(90deg);
+
 }
 
 /** wrapper to constrain thumbnail */
@@ -254,20 +255,26 @@ h1, h2, h3, h4, h5, h6 {
     height: 50px;
     width: 50px;
     overflow: hidden;
-    
+    border-radius: 3px;    
 }
 
 
 /** scroller page */
+.scroller-container {
+    overflow: hidden;
+
+}
 .scroller-panel {
 
     height: 100%;
     
 }
 
+.photo-sum {
+    display: inline-block;
+}
 
 
-// the thumb nail
 
 
 
