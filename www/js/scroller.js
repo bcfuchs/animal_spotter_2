@@ -24,8 +24,12 @@
 	    
 	    $(el).find(".sighting-card-summary .date-sum").html(date);
 	    $(el).find(".sighting-card-summary .species-sum").html(species);
-	    if (image !== null) {
+	    if (image !== undefined && image !== "") {
 		$(el).find(".sighting-card-summary .photo-sum img").attr('src',"data:image/jpeg;base64," + image);
+	    }
+	    else
+	    {
+		$(el).find(".sighting-card-summary .photo-sum").hide();
 	    }
 	}
 	var format_observations = function(obs) {

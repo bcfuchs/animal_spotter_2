@@ -78,13 +78,30 @@
 	
     }
     
+    var format_observations_html = function(obs,klass) {
+	var out = $('<div></div>');
+	    console.log(obs);
+	    for (var i =0; i < obs.length; i++) {
+		console.log(obs[i].name);
+		var label = $("<span></span>").html(obs[i].name).addClass("label");
+		var content = $("<span></span>").html(obs[i].value).addClass('content');
+		var div = $("<div></div>").append(label).append(content);
+                if (klass !== undefined) {
+		    $(div).addClass(klass);
+		}
+		out.append(div);
+	    }
+
+	    return out
+
+	}
 
     /** export */
     window.storage_get = storage_get;
     window.storage_put = storage_put;
     window.storage_keys = storage_keys;
     window.infScroller = add_to_scroller;
-    
+    window.format_observations_html = format_observations_html;
 }()
 
 

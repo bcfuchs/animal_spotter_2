@@ -3,10 +3,21 @@
     $(document).on('deviceready',function(){
 	var do_summary,save_sighting;
 	do_summary = function() {
+	    // closure for making summary card. 
 	    var make_summary = function(t,d){
-		var sel = "#"+t;
-		var content = d.value;
-		if (t === 'time') {
+		var content,sel,dvalue;
+		sel = "#"+t;
+		content = "";
+		dvalue = "";
+		// in case some stuff is missing
+		try {
+		    content = d.value;
+		    dvalue = d.value;
+		}
+		catch(e) {
+		    console.log(e);
+		}
+		    if (t === 'time') {
 		    var hms = new Date(content).toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
 		    content  = (new Date(content)).toDateString() + " " + hms;
 		    
@@ -15,11 +26,19 @@
 		    content = content.lat + " " + content.lon;
 
 		}
+		if (t === "observations") {
+		    content = format_observations_html(dvalue,"sighting-card");
+		}
 		
-		$(sel).data('s-data',d.value);
+		$(sel).data('s-data',dvalue);
 		$(sel).attr('data-sighting-type',t);
-		if (t === 'photo') {		
-		    $(sel).find('img').attr('src',"data:image/jpeg;base64," + d.value);
+		if (t === 'photo') {
+		    if (dvalue !== "") {
+			$(sel).find('img').attr('src',"data:image/jpeg;base64," + dvalue);
+		    }
+		    else {
+			$(sel).find('img').hide();
+		    }
 		}
 		else {
 		    $(sel).find(".content").html(content);
