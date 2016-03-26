@@ -1,3 +1,27 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One|Indie+Flower|Lobster|Shadows+Into+Light|Amatic+SC|Gloria+Hallelujah|Crafty+Girls|Nothing+You+Could+Do|Bonbon);
+
+/**
+
+font-family: 'Poiret One', cursive;
+
+font-family: 'Indie Flower', cursive;
+
+font-family: 'Lobster', cursive;
+
+font-family: 'Shadows Into Light', cursive;
+
+font-family: 'Amatic SC', cursive;
+
+font-family: 'Gloria Hallelujah', cursive;
+
+font-family: 'Crafty Girls', cursive;
+
+font-family: 'Nothing You Could Do', cursive;
+
+font-family: 'Bonbon', cursive;
+
+**/
+
 /**  ##d5f981   keylime */
 
 html,body {
@@ -39,12 +63,14 @@ html,body {
 
 .main-container {
 
-    max-height: 60%;
-//    height: 60%;
+
+    height: 100%;
     border-top: 2px solid gray;
 }
+
+
 .main-container .row,.footer-container .row,.front-footer-container .row {
-    height: 100%;
+//    height: 100%;
 
 }
 .species-container .row {
@@ -67,41 +93,20 @@ html,body {
     color: white;
     
 }
-.front-footer-container {
-    max-height: 24%;
-    height: 24% !important;;
-    border-top: 2px solid gray;
+.type-select-page .footer-container {
+
+    height: 30% !important;;
+    max-height: 30% !important;
 }
+
+
+
 .footer-container {
     max-height: 15%;
     height: 15% !important;;
     border-top: 2px solid gray;
 }
-/** earth container front page */
-.earth-container {
-    height: 100px !important;;
-    width: 100px !important;;
-    margin-top: 30px;
-    border: 1px solid blue;    
-    margin-left: auto;
-    margin-right: auto;
-    background: #e18d27;
-    padding: 10px;
-    
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
 
-}
-
-#earth {
-
-    background-image: url(../img/earth.gif);
-    background-size: cover;
-    margin-left: auto;
-    margin-right: auto;
-    height: 100%;
-}
 .footer-panel {
 //    min-height: 300px !important;
 }
@@ -134,11 +139,16 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 .page-title {
- 
+    
     font-weight: bold;
-    font-size:  32px;
-    float: right;
+    font-size:  42px;
+    font-family: 'Lobster', cursive;
+//    font-family: 'Crafty Girls', cursive;
+
+
 }
+
+
 .top-menu-btn {
 
     float: right;
@@ -161,19 +171,12 @@ h1, h2, h3, h4, h5, h6 {
     
 }
 
-.scroller-container {
-
-    height: 60%;
-}
-.scroller-container .row {
-    height: 100%;
-
-}
 
 .hideme {
 
     display: none !important;
 }
+
 /** sighting card */
 
 .sighting-card-container .final {
@@ -219,6 +222,57 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 /** END sighting-card */
+
+/** type-select page */
+
+
+.main-container.type-select-container {
+
+    max-height: 55%;
+
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    overflow: hidden;
+    
+}
+.type-select-page .options-link {
+
+    float: right;
+}
+.type-select-page .page-title {
+
+    display: inline-block;
+    margin-left: 20%;
+
+}
+
+/** earth container  */
+.earth-container {
+    height: 100px !important;;
+    width: 100px !important;;
+    margin-top: 30px;
+    border: 1px solid blue;    
+    margin-left: auto;
+    margin-right: auto;
+    background: #e18d27;
+    padding: 10px;
+    
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+
+}
+
+#earth {
+
+    background-image: url(../img/earth.gif);
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+}
+
+/** END type-select page */
 
 /** photo page */
 .photo-container {
@@ -286,9 +340,15 @@ h1, h2, h3, h4, h5, h6 {
 
 /** scroller page */
 .scroller-container {
+
+    height: 60%;
     overflow: hidden;
+}
+.scroller-container .row {
+    height: 100%;
 
 }
+
 .scroller-panel {
 
     height: 100%;
