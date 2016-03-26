@@ -106,16 +106,16 @@
   ! function() {
 
   $(document).ready(function(){
-var log = function(m){console.log(m)}
+  var log = function(m){console.log(m)}
   $("#save").click(function(e){
-// no submit
+  // no submit
   e.preventDefault();
   console.log("save hme");
   var ser1 = $("#observation-form" ).serialize();
   var serjson = $("#observation-form" ).serializeArray();
   console.log( ser1);
-    console.log( serjson);
-     $(this).removeClass("btn-primary").addClass("btn-success");
+  console.log( serjson);
+  $(this).removeClass("btn-primary").addClass("btn-success");
      $(this).html("Saved!");
   storage_put('anspot',{key:'observations',value:serjson},log);
 
