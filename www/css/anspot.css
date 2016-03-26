@@ -87,11 +87,7 @@ html,body {
     height: 70%;
 }
 
-.type-select-page .instruction-panel {
-    height:   10%;
-    font-weight: bold;
-    font-size: 110%;
-}
+
 
 
 
@@ -110,7 +106,7 @@ html,body {
 
 .sight-link:hover {
     opacity: 0.8;
-    
+    transition: all 0.5 ease;
 }
 
 .nav-panel {
@@ -149,14 +145,14 @@ h1, h2, h3, h4, h5, h6 {
 
 #title-type {
 
-    font-size: 28px;
+    font-size: 24px;
     display: block;
     width: 100%;
     text-align: center;
     margin: 0 auto;
     top: -14px;
     position: relative;
-
+    font-weight: normal;
 }
 
 
@@ -235,8 +231,16 @@ h1, h2, h3, h4, h5, h6 {
 /** END sighting-card */
 
 /** type-select page */
+
+.type-select-page .instruction-panel {
+    height:   12%;
+    font-weight: bold;
+
+}
+
 .species-select:hover {
 
+    transition: all 0.5 ease;
     background: blue;
     color: white;
     
@@ -251,7 +255,6 @@ h1, h2, h3, h4, h5, h6 {
 .main-container.type-select-container {
 
     max-height: 55%;
-
     border-top: 2px solid gray;
     border-bottom: 2px solid gray;
     overflow: hidden;
@@ -398,6 +401,15 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+.scroller-container .list-group-item {
+    height: 75px;
+
+}
+
+.scroller-container .list-group-item.sighting-card-expanded {
+    height: 100% !important;
+
+}
 .scroller-panel {
 
     height: 100%;

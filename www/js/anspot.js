@@ -6,26 +6,12 @@
 
 	console.log("animal spotter !");
 	$(document).ready(function(){
-	    click_species();
-	    save_species_select();
+
+
 	});
     }
-
-    click_species = function(){
-	console.log('setting up click species !');
-
-	$(".species-select").click(function(){
-	    console.log("clicked specsel");
-	    $(".query-panel-img").addClass('bw')
-	    var species = $(this).attr("data-species");
-	    $(this).find(".query-panel-img").removeClass('bw')
-	    storage_put('anspot',{key:'species',value:species},function(d){console.log(d)});
-	    var time = Date.now();
-	    storage_put('anspot',{key:'time',value:time},function(d){console.log(d)});
-
-	});
-    };
     
+      
     var storage_keys = function(name,cb) {
 	Lawnchair({name:name,adapter:'dom'},function(){
 	    this.keys(cb);
@@ -41,7 +27,14 @@
 	});
 
     }
+    var storage_exists = function(name,key,cb) {
+	Lawnchair({name:name,adapter:'dom'},function(){
+	    this.exists(key,cb);
+	});
+	
 
+    }
+    
     var storage_put = function(name,object,cb){
 	console.log('lawn put  ' + name );
 	Lawnchair({name:name,adapter:'dom'},function(){
@@ -61,22 +54,7 @@
 	});
 	
     }
-    
-    save_species_select = function() {
 
-	var log = function(m){console.log(m)}
-	log("save species select");
-	$(document).ready(function(){
-	    console.log($(".sight-link"));
-	    $(".sight-link").on('click',function(e){
-		
-		var species_type = $(this).attr('data-animal-type');
-		
-		storage_put('anspot',{key:'species-type',value:species_type},log);
-	    });
-	});
-	
-    }
     
     var format_observations_html = function(obs,klass) {
 	var out = $('<div></div>');
@@ -100,6 +78,7 @@
     window.storage_get = storage_get;
     window.storage_put = storage_put;
     window.storage_keys = storage_keys;
+    window.storage_exists = storage_exists;
     window.infScroller = add_to_scroller;
     window.format_observations_html = format_observations_html;
 }()

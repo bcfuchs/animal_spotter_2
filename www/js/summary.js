@@ -68,7 +68,7 @@
                     });
 		    
 		    sighting.key = Date.now();
-                    storage_put('sightings',sighting,function(d){console.log(d)});  
+                    storage_put('sighting',sighting,function(d){console.log(d)});  
 		}
 		add_to_sighting();
 		window.location.href = $(this).attr("data-next");

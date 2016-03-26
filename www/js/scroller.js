@@ -125,13 +125,20 @@
 		    }
 		}
 	    }
-	    
+	    // load items -- check first that they arent in the trash.
 	    var proc = function (d) {
+
 		var handler = function(i,max) {
 		    log("handler " + i + ' ' + max);
 		    return function(d){
-
-			load_sighting(d,i,max)}
+			// only load if not in trash
+			var cb_loader = function(check){
+			    if (check === false) {
+				load_sighting(d,i,max)
+			    }
+			}
+			storage_exists('trash',d.time,cb_loader);
+		    }
 
 		};
 
@@ -151,44 +158,45 @@
 
 	// display the extended card on click
 	var display_card = function(){
-	    $('.sighting-card-container').click(function(){
-		    var expanded = $(this).data("expanded");
+	    $('.sighting-card-summary').click(function(){
+		var el = $(this).parent();
+
+		var expanded = $(el).data("expanded");
 
 		    if (expanded === false) {
 
 			// for if we want a separate page for editing...
-			var id = $(this).data("data-sighting-id");
+			var id = $(el).data("data-sighting-id");
 
 			// hide rest, show this one
-			$('.sighting-card-container').not(this).addClass('hide-sighting-card');
+			$('.sighting-card-container').not(el).addClass('hide-sighting-card');
 
 			// remove the active indicator
-			$(this).removeClass("active"); 
-			console.log(this);
+			$(el).removeClass("active"); 
+			console.log(el);
 
 			// expand the div show the controls. 
-			$(this).find(".hideme").removeClass('hideme');
-			$(this).addClass('sighting-card-expanded');
+			$(el).find(".hideme").removeClass('hideme');
+			$(el).addClass('sighting-card-expanded');
 
 			// move the share button  to top and show it
-			$("#share-target").html($(this).find(".share-btn"));
-			$("#share-target").find(".share-btn").removeClass("hidden");
+		//	$("#share-target").html($(el).find(".share-btn"));
+		//	$("#share-target").find(".share-btn").removeClass("hidden");
+			$(el).find(".share-btn").removeClass("hidden");
 			
-			
-
 
 			// close the expanded card on click
-			$(this).data("expanded",true);
+			$(el).data("expanded",true);
 		    }
 
 		else {
 
-		    $("#share-target").html();
-		    $(this).removeClass('.sighting-card-expanded');
-		    $(this).find(".sighting-card").addClass("hideme");
+	
+		    $(el).removeClass('.sighting-card-expanded');
+		    $(el).find(".sighting-card").addClass("hideme");
 		    $('.sighting-card-container').removeClass("active");
-		    $(this).addClass("active"); 
-		    $(this).data("expanded",false);
+		    $(el).addClass("active"); 
+		    $(el).data("expanded",false);
 		    $('.sighting-card-container').removeClass('hide-sighting-card');
 		    }
 		    
@@ -197,9 +205,40 @@
 	    })
 
 	}
+
+	var close_card = function() {
+
+	    $(".close-btn").click(function(){
+		var el = $(this).parent().parent().parent().parent();
+		
+		$(el).removeClass('sighting-card-expanded');
+		$(el).find(".sighting-card").addClass("hideme");
+		$('.sighting-card-container').removeClass("active");
+		$(el).addClass("active"); 
+		$(el).data("expanded",false);
+		$('.sighting-card-container').removeClass('hide-sighting-card');
+		console.log(el);
+
+	    })
+	}
+	var bin_card = function(){
+	    var binme = function() {
+		var el = $(this).parent().parent().parent().parent();
+		var id = $(el).data("sighting-id");
+		var sighting = {trash:true}
+		sighting.key = id;
+		storage_put('trash',sighting,function(d){console.log(d)});
+		console.log(id);
+	    }
+	    
+	    $(".bin-btn").click(binme);
+
+	}
 	init_InfScroll();
 	test_get_sightings('#cloner','#scroll-1');
 	display_card();
+	close_card();
+	bin_card();
     });
 }()
 

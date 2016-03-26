@@ -32,7 +32,7 @@
 	    <p>Please choose a species, using the images below.</p>
 	  </div>
 	</div>
-	<div class="row species-select" data-species="arctic fox">
+	<div class="row species-select land" data-species="arctic fox">
 	  
 	  <div class="col-xs-6 col-md-6 query-panel query-panel-img arctic-fox"></div>
 
@@ -41,20 +41,45 @@
 	  </div>
 	</div>
 	
-	<div class="row species-select" data-species="polar bear">
+	<div class="row species-select land" data-species="polar bear">
 	  <div class="col-xs-6 col-md-6 query-panel query-panel-img  polarbear"></div>
 	  <div class="col-xs-6 col-md-6 query-panel">
 	    <p>(Hints for id'ing this species 2)</p>
 	  </div>
 	</div>
 	
-	<div class="row species-select" data-species="wolf">
+	<div class="row species-select land" data-species="wolf">
 	  <div class="col-xs-6 col-md-6 query-panel query-panel-img  wolf"></div>
 	  <div class="col-xs-6 col-md-6 query-panel">
 	    <p>(Hints for id'ing this species)</p>
 	  </div>	  
 	</div>
+
+      </div>
+      
+      <div class="row species-select sea" data-species="arctic fox">
+	  
+	  <div class="col-xs-6 col-md-6 query-panel query-panel-img arctic-fox"></div>
+
+	  <div class="col-xs-6 col-md-6 query-panel">
+	    <p>(Hints for id'ing this species)</p>
+	  </div>
+	</div>
 	
+	<div class="row species-select sea" data-species="polar bear">
+	  <div class="col-xs-6 col-md-6 query-panel query-panel-img  polarbear"></div>
+	  <div class="col-xs-6 col-md-6 query-panel">
+	    <p>(Hints for id'ing this species 2)</p>
+	  </div>
+	</div>
+	
+	<div class="row species-select sea" data-species="wolf">
+	  <div class="col-xs-6 col-md-6 query-panel query-panel-img  wolf"></div>
+	  <div class="col-xs-6 col-md-6 query-panel">
+	    <p>(Hints for id'ing this species)</p>
+	  </div>	  
+	</div>
+
       </div>
       
       <div class="container footer-container green">
@@ -71,6 +96,7 @@
 
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
+      <script type="text/javascript" src="js/species_select.js"></script>
       <script>
 	$("#hidewrap").click(function(){ $("#hideme").show()});
       </script>
