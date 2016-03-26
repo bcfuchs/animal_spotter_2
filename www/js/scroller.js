@@ -42,18 +42,46 @@
 	    return out
 
 	}
-	var build_card = function(el,species,date,observations,location,id) {
 
-	    observations = format_observations(observations);
+	var format_observations_text = function(obs) {
+	    var out = [];
+
+	    for (var i =0; i < obs.length; i++) {
+		out.push(obs[i].name + ": " + obs[i].value);			 
+	    }
+	    
+	    return out.join("\n\n");
+
+	}
+	var format_msg = function(date,species,location,observations,id){
+	    var out  = [];
+	    out.push("species: " + species);
+	    out.push("when: " + date);
+	    out.push("where: " + location);
+	    out.push("observations: \n\n" + format_observations_text(observations));
+	    return out.join("\n\n");
+	}
+	
+	    
+	var build_card = function(el,species,date,observations,location,id,image,locobj) {
+
+
 
 	    $(el).find(".time .content").html(date);
 	    $(el).find(".location .content").html(location);
-	    $(el).find(".observations .content").html(observations);
+	    $(el).find(".observations .content").html(format_observations(observations));
 	    $(el).find(".species .content").html(species);
 	    $(el).attr('data-sighting-id',id);
 	    $(el).find(".share-btn").click(function(){
+		
+		var msg = format_msg(date,species,location,observations,id);
 
-		window.plugins.socialsharing.share('Message, subject, image and link', 'The subject', 'https://www.google.nl/images/srpr/logo4w.png', 'http://www.x-services.nl')
+		var subject = "Animal Spotter Sighting " + species +  " " + date
+		var img = "data:image/jpeg;base64," + image
+		var file = {date:date,species:species,time:date,observations:observations,id:id,location:locobj}
+		var json  = "data:application/json;base64," + btoa(JSON.stringify(file));
+		
+		window.plugins.socialsharing.share(msg, subject, [img,json])
 		    
 
 	    });
@@ -72,7 +100,7 @@
 		    var el = $(cloneSel).clone().removeAttr('id').removeClass('hideme');
 		    var hms = new Date(d.time).toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
 		    var date = (new Date(d.time)).toDateString() + " " + hms;
-		    var location = d.location.lat + " " + d.location.lon;
+		    var location = "lat: " + d.location.lat + " lon:" + d.location.lon;
 		    var species = d.species;
 		    var observations = d.observations;
 		    var photo = d.photo;
@@ -82,7 +110,7 @@
 		    build_card_summary(el,d.species,date,photo);
 
 		    // card							   
-		    build_card(el,species,date,observations,location,id);
+		    build_card(el,species,date,observations,location,id,photo,d.location);
 
 		    // add to top of list
 		    $(listSel).prepend(el);
@@ -140,7 +168,7 @@
 
 			// move the share button  to top and show it
 			$("#share-target").html($(this).find(".share-btn"));
-			$("#share-target").find(".share-btn").show();
+			$("#share-target").find(".share-btn").removeClass("hidden");
 			
 			
 
