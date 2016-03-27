@@ -12,74 +12,30 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <title>Animal Spotter</title>
     <script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+    <script type="text/javascript" src="js/jquery.csv.js"></script>
     <script type="text/javascript" src="js/lawnchair.js"></script>
     <script type="text/javascript" src="js/photo.js"></script>
     <script type="text/javascript" src="js/anspot.js"></script>    
 
   </head>
   <body>
-    <div id="wrap" class=" black type-select-page">
+    <div id="wrap" class=" black species-select-page">
       <div class="container title-container green">
 	<div class="row instructions">
 	  <h2 class="page-title">Animal Spotter</h2>
-	  <span id="title-type">Species id</span>
+	  <div id="title-type"><span class="place"></span>  Alert</div>
 	</div>
       </div>
       
-      <div class="container main-container species-container blue">
+      <div class="container instruction-container  blue">
 	<div class="row  instruction-panel">
 	  <div class="col-xs-12 col-md-12">
 	    <p>Please choose a species, using the images below.</p>
 	  </div>
 	</div>
-	<div class="row species-select land" data-species="arctic fox">
-	  
-	  <div class="col-xs-6 col-md-6 query-panel query-panel-img arctic-fox"></div>
-
-	  <div class="col-xs-6 col-md-6 query-panel">
-	    <p>(Hints for id'ing this species)</p>
-	  </div>
-	</div>
-	
-	<div class="row species-select land" data-species="polar bear">
-	  <div class="col-xs-6 col-md-6 query-panel query-panel-img  polarbear"></div>
-	  <div class="col-xs-6 col-md-6 query-panel">
-	    <p>(Hints for id'ing this species 2)</p>
-	  </div>
-	</div>
-	
-	<div class="row species-select land" data-species="wolf">
-	  <div class="col-xs-6 col-md-6 query-panel query-panel-img  wolf"></div>
-	  <div class="col-xs-6 col-md-6 query-panel">
-	    <p>(Hints for id'ing this species)</p>
-	  </div>	  
-	</div>
-
       </div>
-      
-      <div class="row species-select sea" data-species="arctic fox">
-	  
-	  <div class="col-xs-6 col-md-6 query-panel query-panel-img arctic-fox"></div>
-
-	  <div class="col-xs-6 col-md-6 query-panel">
-	    <p>(Hints for id'ing this species)</p>
-	  </div>
-	</div>
-	
-	<div class="row species-select sea" data-species="polar bear">
-	  <div class="col-xs-6 col-md-6 query-panel query-panel-img  polarbear"></div>
-	  <div class="col-xs-6 col-md-6 query-panel">
-	    <p>(Hints for id'ing this species 2)</p>
-	  </div>
-	</div>
-	
-	<div class="row species-select sea" data-species="wolf">
-	  <div class="col-xs-6 col-md-6 query-panel query-panel-img  wolf"></div>
-	  <div class="col-xs-6 col-md-6 query-panel">
-	    <p>(Hints for id'ing this species)</p>
-	  </div>	  
-	</div>
-
+      <div class="container main-container  species-select-container blue">
+	<div id="species-select-scroller" class="list-group"></div>
       </div>
       
       <div class="container footer-container green">
@@ -97,34 +53,40 @@
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
       <script type="text/javascript" src="js/species_select.js"></script>
-      <script>
-	$("#hidewrap").click(function(){ $("#hideme").show()});
-      </script>
+      <div id="templates" style="display:none;">
+	<div id="species-template" class="species-select list-group-item">
+	  <div class="container">
+	    <div class="row">
+
+	    <div class="col-xs-6 image-container">
+	      <div class="image">
+		<img></img>
+	      </div>
+	    </div>
+	    
+	    <div class="col-xs-6 info-container">
+
+	      <div class="name"></div>
+	      <div class="scientific_name"></div>
+	      <div class="text"></div>
+	      <div class="link"><a>More info...</a></div>
+	      <div class="id hideme"></div>
+	      <div class="alert_type hideme"></div>
+	    </div>
+
+	  </div>
+	</div>
+      </div>
     </div>
-  </body>
-  <script>
+</div>
+</body>
+<script>
 
-! function() {
-$(document).ready(function(){
-var make_title = function(d){
-if (d['value'].match('sea')) {
-    $("#title-type").html("Beach");
-}
-if (d['value'].match('air')) {
-    $("#title-type").html("Birds");
-
-}
-
-if (d['value'].match('land')) {
-    $("#title-type").html("Land");
-
-}
-}
-
-storage_get('anspot','species-type',function(d){ make_title(d) });
+  ! function() {
+  $(document).ready(function(){
 
 
-});
-}()
-  </script>
+  });
+  }()
+</script>
 </html>

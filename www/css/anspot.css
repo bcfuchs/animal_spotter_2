@@ -230,40 +230,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 /** END sighting-card */
 
-/** type-select page */
+/** index.html */
 
-.type-select-page .instruction-panel {
-    height:   12%;
-    font-weight: bold;
 
-}
 
-.species-select:hover {
-
-    transition: all 0.5 ease;
-    background: blue;
-    color: white;
-    
-}
-
-.type-select-page .footer-container {
-
-    height: 30% !important;;
-    max-height: 30% !important;
-}
-
-.main-container.type-select-container {
-
-    max-height: 55%;
-    border-top: 2px solid gray;
-    border-bottom: 2px solid gray;
-    overflow: hidden;
-    
-}
-.type-select-page .options-link {
-
-    float: right;
-}
 .type-select-page .page-title {
 
     display: inline-block;
@@ -296,9 +266,125 @@ h1, h2, h3, h4, h5, h6 {
     margin-right: auto;
     height: 100%;
 }
+.type-select-page .options-link {
 
-/** END type-select page */
+    float: right;
+}
+.type-select-page .footer-container {
 
+    height: 30% !important;;
+    max-height: 30% !important;
+}
+
+
+.type-select-container.main-container {
+
+    max-height: 55%;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    overflow: hidden;
+    
+}
+
+/** END index.html */
+
+
+
+
+/** @@ species-select page @@ */
+
+
+.species-select-page .instruction-panel {
+    height:   12%;
+    font-weight: bold;
+
+}
+
+.species-select-page .main-container {
+    padding:0;
+    height: 67%;
+}
+
+
+.species-select.list-group-item {
+
+    padding:0;
+
+
+}
+.species-select-page .species-select .image {
+    height: 130px;
+    width: 199px;
+    overflow: hidden;
+
+}
+
+
+.species-select .image img{
+
+    height: 230px;
+
+
+}
+
+
+/** END species-select page */
+
+
+
+/** species select scroller */
+
+#species-select-scroller {
+    overflow: hidden;
+    overflow-y:scroll;
+    height:100%;
+    width:100%;
+}
+
+.species-select {
+    background: black;
+}
+.species-select:hover {
+
+    transition: all 0.5 ease;
+    background: blue;
+    color: white;
+    
+}
+.species-select .scientific_name {
+    font-style: italic;
+}
+.species-select .name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.species-select .text {
+
+    height: 40px;
+}
+.image-container {
+    padding:0 !important;
+    margin: -1px;;
+
+}
+
+.info-container {
+    padding: 5px !important;
+    margin: -1px;;
+    color: white;
+
+    background:black;
+    height: 130px;
+}
+
+.species-select .image {
+
+    
+
+}
+
+/** END species select scroller */
 /** photo page */
 
 

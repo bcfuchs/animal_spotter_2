@@ -1,0 +1,12 @@
+"id","name","alert_type","scientific_name","text","image","link"
+"001","polar bear","land","","(Hints for id'ing this species)","img/polarbear.jpg","https://en.wikipedia.org/wiki/Polar_bear"
+"002","arctic wolf","land","","Hints...","img/wolf.jpg","https://en.wikipedia.org/wiki/Arctic_wolf"
+"003","arctic fox","land","","Hints...","img/arctic_fox.jpg","https://en.wikipedia.org/wiki/Arctic_fox"
+"004","narwhal","sea","","Hints...","img/narwhal.jpg","https://en.wikipedia.org/wiki/Beluga_whale"
+"005","bowhead","sea","","Hints...","img/bowhead.jpg","https://en.wikipedia.org/wiki/Bowhead_whale"
+"006","beluga whale","sea","","Hints...","img/beluga.jpg","https://en.wikipedia.org/wiki/Beluga_whale"
+"007","arctic tern","air","Sterna paradisaea","Hints...","img/arctic_tern.jpg","https://en.wikipedia.org/wiki/Beluga_whale"
+"008","snowy owl","air","Bubo scandiacus","Hints...","img/snowy_owl.jpg","https://en.wikipedia.org/wiki/Bowhead_whale"
+"009","rock ptarmigan","air","Lagopus muta","Hints...","img/rock_ptarmigan.jpg","https://en.wikipedia.org/wiki/Rock_ptarmigan"
+"010","tundra swan","air","Cygnus columbianus","Hints...","img/tundra_swan.jpg","https://en.wikipedia.org/wiki/Tundra_swan"
+
