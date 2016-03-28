@@ -27,7 +27,7 @@
     </style>
   </head>
   <body>
-    <div id="wrap" class=" black">
+    <div id="wrap" class="location-page black">
       <!--
 	  <div id="splash-image"></div>
 	  -->
@@ -39,28 +39,29 @@
 	</div>
       </div>
       
-      <div class="container main-container species-container blue">
-
-
-
+      <div class="container main-container map-container blue h79" id="location-container">
 	
 	<div class="row location">
 	  <div id="loc" class="col-xs-12 col-md-12 query-panel query-panel" >
-	    
 	  </div>
 	</div>
-		<div class="row map-container">
-	  <div id="map" class="col-xs-12 col-md-12 query-panel" >
+	<div class="row map">
+	  <div id="map" class="col-xs-12 col-md-12 query-panel">
 	    
 	  </div>
 	</div>
       </div>
       
-      <div class="container footer-container green">
+      <div class="container footer-container green show-on-click hideme"
+	   data-open-event="mapLoaded"
+	   data-open-event-target="#location-container"
+	   data-open-event-add-class="h70"
+	   data-open-event-remove-class="h79"
+	   >
 	<div class="row">
 	  <div class="col-xs-12 col-md-12 green footer-panel">
 	    <div class="next-container">
-	      <h2><a href="observations.html">Observations<span id="continue">&rarr;</span></a></h2>
+	      <h2><a href="observations.html">Take notes! <span id="continue">&rarr;</span></a></h2>
 	    </div>
 	    
 	  </div>
@@ -70,72 +71,11 @@
 
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
-      <script>
-	$("#hidewrap").click(function(){ $("#hideme").show()});
-      </script>
-    </div>
-  </body>
       <script src="https://maps.googleapis.com/maps/api/js"></script>
       <script src="js/gmaps.js"></script>
-  <script>
+      <script src="js/location.js"></script>
 
-! function() {
+    </div>
+  </body>
 
-//storage_get('anspot','species-type',function(d){ make_title(d) });
-
-var location = function(cb){
-
-    var onSuccess = function(position) {
-
- cb('Latitude: '          + position.coords.latitude          + ', ' +
- 'Longitude: '         + position.coords.longitude         + ', ' +
- 'Altitude: '          + position.coords.altitude          + ', ' +
- 'Accuracy: '          + position.coords.accuracy          + ', ' +
- 'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + ', ' +
- 'Heading: '           + position.coords.heading           + ', ' +
- 'Speed: '             + position.coords.speed             + ', ' +
- 'Timestamp: '         + position.timestamp                + ', ',position);
-
-}
- var onError = function(error) {
-  cb('code: '    + error.code    + ', ' +
-  'message: ' + error.message + ', ');
- }
-
-  navigator.geolocation.getCurrentPosition(onSuccess, onError,{ maximumAge: 3000, timeout: 5000, enableHighAccuracy: true });
-
-}
-
-
-
-$(document).on('deviceready',function(){
-   var addLoc = function(m,pos){
-         var lon = pos.coords.longitude;
-         var lat = pos.coords.latitude;
-          var location = {lat:lat,lon:lon}
-var map = new GMaps({
-div: '#map',
-lat: lat,
-lng: lon,
-zoom: 6,
-                        });
-console.log(m);
-$("#loc").html(m)
-storage_put('anspot',{key:'location',value:location},function(d){console.log(d)});
-
-
-};
-
-
-
-console.log("finding location");
-
-location(addLoc);
-
-
-});
-
-
-}()
-  </script>
 </html>

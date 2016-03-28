@@ -30,7 +30,7 @@
 	</div>
       </div>
       
-      <div class="container main-container species-container blue">
+      <div class="container main-container species-container blue h89" id="observations-container">
 	<div class="row observations">
 	  <div class="col-xs-12 col-md-12 query-panel">
 	    <form id="observation-form" class="form-horizontal">
@@ -83,7 +83,12 @@
       
 
     
-    <div class="container footer-container green">
+      <div class="container footer-container show-on-click green"
+	   data-open-event="observationSaved"
+	   data-open-event-target="#observations-container"
+	   data-open-event-add-class="h70"
+	   data-open-event-remove-class="h89"
+	   >
       <div class="row">
 	<div class="col-xs-12 col-md-12 green footer-panel">
 	  <div class="next-container">
@@ -97,37 +102,9 @@
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <script>
+    <script type="text/javascript" src="js/observations.js"></script>
 
-    </script>
 </div>
 </body>
-<script>
 
-  ! function() {
-
-  $(document).ready(function(){
-  var log = function(m){console.log(m)}
-  $("#save").click(function(e){
-  // no submit
-  e.preventDefault();
-  console.log("save hme");
-  var ser1 = $("#observation-form" ).serialize();
-  var serjson = $("#observation-form" ).serializeArray();
-  console.log( ser1);
-  console.log( serjson);
-  $(this).removeClass("btn-primary").addClass("btn-success");
-     $(this).html("Saved!");
-  storage_put('anspot',{key:'observations',value:serjson},log);
-
-  });
-
-
-  });
-
-  //storage_get('species-select','species-type',function(d){ make_title(d) });
-
-
-  }()
-</script>
 </html>

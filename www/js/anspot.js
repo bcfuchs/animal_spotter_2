@@ -2,6 +2,7 @@
 
     document.addEventListener("deviceready",anspot,false);
     var click_species,hover_species,save_species_select;
+
     function anspot() {
 
 	console.log("animal spotter !");
@@ -10,8 +11,27 @@
 
 	});
     }
+    // show the footer when $el is clicked
+    var footer_show_on_click = function() {
+	var event = "click";
+	console.log('footer_show_on_click');
+	var showSel = ".show-on-click";
+	$(showSel).each(function(){
+	    var event  = $(this).data('open-event');
+	    var eventTargetSel = $(this).data('open-event-target');
+	    var el = $(this);
+	    var classAdd = $(this).data('open-event-add-class');
+	    var classRemove = $(this).data('open-event-remove-class');
+	    $(window).on( event, function(){
+		console.log("hi there");
+		$(el).removeClass("hideme").show();
+		$(eventTargetSel).removeClass(classRemove).addClass(classAdd);
+	    });
+	})
+	
+    }
+	
     
-      
     var storage_keys = function(name,cb) {
 	Lawnchair({name:name,adapter:'dom'},function(){
 	    this.keys(cb);
@@ -80,6 +100,7 @@
     window.storage_keys = storage_keys;
     window.storage_exists = storage_exists;
     window.infScroller = add_to_scroller;
+    window.footer_show_on_click = footer_show_on_click;
     window.format_observations_html = format_observations_html;
 }()
 

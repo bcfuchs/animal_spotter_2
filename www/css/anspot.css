@@ -29,7 +29,7 @@ html,body {
 }
 
 #wrap {
-
+    overflow:hidden;
     height: 100%;
 }
 
@@ -44,9 +44,15 @@ html,body {
     font-size: 22px !important;;
 }
 
+
 .black {
     background: black;
+   
+}
 
+.white-on-black {
+    background: black !important;
+    color: white !important;
 }
 .blue {
    background:     #2efdfe; 
@@ -65,13 +71,16 @@ html,body {
 
 
     height: 100%;
-    border-top: 2px solid gray;
+    border-top: 1px solid  white;
 }
 
 
 .main-container .row,.footer-container .row,.front-footer-container .row {
 //    height: 100%;
 
+}
+.footer-container a {
+    cursor: pointer;
 }
 .species-container .row {
     height: 24%;
@@ -83,8 +92,8 @@ html,body {
     border: 1px solid gray;
 }
 
-.main-container.species-container {
-    height: 70%;
+.main-container.species-select-container {
+//    height: 70%;
 }
 
 
@@ -162,6 +171,8 @@ h1, h2, h3, h4, h5, h6 {
     margin: 5px;
     
 }
+
+
 .green {
 
 //    background: #29f62e;
@@ -293,11 +304,42 @@ h1, h2, h3, h4, h5, h6 {
 
 /** @@ species-select page @@ */
 
+.species-select-page .footer-container {
+//    font-family: 'Lobster', cursive;
 
+   font-size: 22px;
+
+}
+
+.species-select-page .footer-container .msg {
+
+}
+
+.species-select-page .footer-container a {
+    background: black;
+    color: white;
+
+}
 .species-select-page .instruction-panel {
     height:   12%;
     font-weight: bold;
+    color: silver;
 
+}
+
+.species-select-page .instruction-panel p {
+    margin-top: 3px;
+}
+
+.msg {
+    color: white;
+    font-size: 80%;
+
+}
+#msg {
+
+    font-weight: bold;
+    
 }
 
 .species-select-page .main-container {
@@ -314,7 +356,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .species-select-page .species-select .image {
     height: 130px;
-    width: 199px;
+    width: 100%;
     overflow: hidden;
 
 }
@@ -322,12 +364,39 @@ h1, h2, h3, h4, h5, h6 {
 
 .species-select .image img{
 
-    height: 230px;
+    height: 120%;
+    position: relative;
+    top: -20%;
+    left: -20%;
 
 
 }
 
+.h50 {
 
+    height: 50% !important;
+
+}
+
+
+.h70 {
+
+    height: 70% !important;
+
+}
+
+
+.h79 {
+    
+    height: 79% !important;
+
+}
+
+.h89 {
+    
+    height: 89% !important;
+
+}
 /** END species-select page */
 
 
@@ -341,13 +410,14 @@ h1, h2, h3, h4, h5, h6 {
     width:100%;
 }
 
-.species-select {
+.list-group-item.species-select {
     background: black;
+    color: white;
 }
-.species-select:hover {
+.list-group-item.species-select:hover {
 
-    transition: all 0.5 ease;
-    background: blue;
+    transition: all 1 ease;
+    background: #222;
     color: white;
     
 }
@@ -370,11 +440,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .info-container {
-    padding: 5px !important;
-    margin: -1px;;
-    color: white;
-
-    background:black;
+    px 5px 5px 15px !important;
+    margin: -1px;
     height: 130px;
 }
 
@@ -518,6 +585,17 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /** END scroller page */
+
+
+/** @@location  page */
+/** END scroller page */
+
+.map-container .map {
+
+    height: 60%;
+    
+    
+}
 
 
 .wolf {

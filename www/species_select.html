@@ -27,22 +27,23 @@
 	</div>
       </div>
       
-      <div class="container instruction-container  blue">
+      <div class="container instruction-container white-on-black">
 	<div class="row  instruction-panel">
 	  <div class="col-xs-12 col-md-12">
-	    <p>Please choose a species, using the images below.</p>
+	    <p>Please choose a species.</p>
 	  </div>
 	</div>
       </div>
-      <div class="container main-container  species-select-container blue">
-	<div id="species-select-scroller" class="list-group"></div>
+      <div class="container main-container  species-select-container h79">
+	<div id="species-select-scroller" class="white-on-black list-group"></div>
       </div>
       
-      <div class="container footer-container green">
+      <div class="container footer-container hideme">
 	<div class="row">
-	  <div class="col-xs-12 col-md-12 green footer-panel">
+	  <div class="col-xs-12 col-md-12 footer-panel">
 	    <div class="next-container">
-	      <h2><a href="location.html">Get your location <span id="continue">&rarr;</span></a></h2>
+	      <div class="msg"><span id="msg"></span></div>
+	      <div><a class="white-on-black" href="location.html">Now get your location!<span id="continue">&rarr;</span></a></div>
 	    </div>
 	    
 	  </div>
@@ -53,6 +54,7 @@
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
       <script type="text/javascript" src="js/species_select.js"></script>
+
       <div id="templates" style="display:none;">
 	<div id="species-template" class="species-select list-group-item">
 	  <div class="container">

@@ -10,25 +10,38 @@
 	    $(klass).show();
 	    
 	}
+	/** called inside _species_loader */
+	var _click_species = function(_complete_actions){
 
-	var click_species = function(){
 	    console.log('setting up click species !');
 	    var species_type;
 	    var log = function(m){console.log(m)}
 
-
+	    console.log($(".species-select"));
 	    
 	    $(".species-select").click(function(){
 		console.log("clicked specsel");
-		$(".query-panel-img").addClass('bw')
-		var species = $(this).attr("data-species");
-		$(this).find(".query-panel-img").removeClass('bw')
+		$(".image img").addClass('bw')
+		var species = $(this).data("species");
+		$(this).find(".image img").removeClass('bw')
 		storage_put('anspot',{key:'species',value:species},function(d){console.log(d)});
 		var time = Date.now();
 		storage_put('anspot',{key:'time',value:time},function(d){console.log(d)});
-		
+		$("#msg").html(species);
+
+		_complete_actions();
 	    });
 	}
+
+	var _click_species_complete_actions = function() {
+
+	    $(".footer-container").removeClass("hideme").show();
+	    $(".species-select-container").removeClass("h79").addClass("h70");
+
+
+	}
+
+				       
 	var _species_loader = function(csv,templateSel,targetSel) {
 
 	    var sp = $.csv.toObjects(csv);
@@ -49,6 +62,10 @@
 		    case "link":
 			$(t).find("."+name + " a").attr("href",content);
 			break;
+		    case "name":
+			$(t).attr("data-species",content);
+			$(t).find("."+name).html(content);
+			break;
 		    default:
 			$(t).find("."+name).html(content);
 		    }
@@ -57,6 +74,7 @@
 
 		$(targetSel).append(t);
 	    }
+	    _click_species(_click_species_complete_actions);
 	    storage_get('anspot','species-type',_show_species_type); // finally show the species
 
 	}
@@ -106,7 +124,7 @@
 
 	set_title();
 	load_species(csv,cloneSel,targetSel);
-	click_species(); // race condition -- this needs to be a cb on load_species
+
 
     });
 
