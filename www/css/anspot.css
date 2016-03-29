@@ -118,19 +118,14 @@ html,body {
     transition: all 0.5 ease;
 }
 
+
 .nav-panel {
     border-top: 1px solid gray;
     border-right: 1px solid gray;
     background-repeat:  no-repeat !important;;
     min-height: 180px !important;
-    background-size: 300px !important;
-    
-    //    display: inline;
-    /**
-    -webkit-box-shadow: 6px 2px 5px 0px rgba(214,206,214,1);
-    -moz-box-shadow: 6px 2px 5px 0px rgba(214,206,214,1);
-    box-shadow: 6px 2px 5px 0px rgba(214,206,214,1);
-    */
+    background-size: cover !important;
+    background-position: 50% 50% !important;    
 
 }
 
@@ -179,12 +174,12 @@ h1, h2, h3, h4, h5, h6 {
     background: #a5f9a7;;
 }
 .science-corner {
-    
- 
+      font-family: 'Lobster', cursive;
+      color: black;
 }
 
 .query-panel {
-
+    
     height: 100%;
     
 }
@@ -240,6 +235,20 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 /** END sighting-card */
+/** @@science.html */
+.science-page .main-container {
+
+    height: 70%;
+}
+
+.science-page p,li {
+    font-family: 'Nothing You Could Do', cursive;    
+    font-weight: bold;
+    padding: 10px;
+    font-size: 18px;
+		 
+}
+/** END science.html */
 
 /** index.html */
 
@@ -304,6 +313,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /** @@ species-select page @@ */
 
+.species-select-page #continue {
+    font-size: inherit;
+
+}
 .species-select-page .footer-container {
 //    font-family: 'Lobster', cursive;
 
@@ -398,6 +411,38 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 /** END species-select page */
+/** @@photo page */
+.container.photo-container {
+    margin: 0 auto;
+    padding: 0;
+
+}
+.photo-container .row {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.photo-container .col-xs-12  {
+    margin: 0;
+    padding: 0;
+}
+.photo-container #cam-icon {
+
+    height: 100%;
+    width: 100%;
+}
+
+.photo-container #cam-icon:hover {
+    background: white;
+    -moz-filter: invert(100%);
+    -webkit-filter: invert(100%);
+    -o-filter: invert(100%);
+    -ms-filter: invert(100%);
+    filter: invert(100%);
+    transition: all 1 ease;
+}
+/** END photo page */
 
 
 
@@ -535,13 +580,17 @@ h1, h2, h3, h4, h5, h6 {
     
 }
 .summary-page .main-container .row {
-
+    height: 100%;
     margin-right: -35px;
 
 }
 /** END summary  page */
 
 /** scroller page */
+.scroller-page .footer-container h2{
+
+    font-size: 22px !important;
+}
 .container.scroller-container {
 
     height: 70%;
@@ -605,6 +654,14 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: auto;
     margin-right: auto;
     height: 100%;
+
+}
+
+.nav-panel.img {
+    background-size: cover;
+
+    background-repeat: no-repeat;
+    color: #000;
 
 }
 .polarbear {
