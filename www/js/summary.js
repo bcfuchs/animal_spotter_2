@@ -34,7 +34,7 @@
 		$(sel).attr('data-sighting-type',t);
 		if (t === 'photo') {
 		    if (dvalue !== "") {
-			$(sel).find('img').attr('src',"data:image/jpeg;base64," + dvalue);
+			$(sel).find('img').attr('src',dvalue);
 		    }
 		    else {
 			$(sel).find('img').hide();
@@ -68,7 +68,7 @@
                     });
 		    
 		    sighting.key = Date.now();
-                    storage_put('sighting',sighting,function(d){console.log(d)});  
+                    storage_put('sightings',sighting,function(d){console.log(d)});  
 		}
 		add_to_sighting();
 		window.location.href = $(this).attr("data-next");

@@ -25,7 +25,7 @@
 	    $(el).find(".sighting-card-summary .date-sum").html(date);
 	    $(el).find(".sighting-card-summary .species-sum").html(species);
 	    if (image !== undefined && image !== "") {
-		$(el).find(".sighting-card-summary .photo-sum img").attr('src',"data:image/jpeg;base64," + image);
+		$(el).find(".sighting-card-summary .photo-sum img").attr('src', image);
 	    }
 	    else
 	    {
@@ -81,7 +81,7 @@
 		var msg = format_msg(date,species,location,observations,id);
 
 		var subject = "Animal Spotter Sighting " + species +  " " + date
-		var img = "data:image/jpeg;base64," + image
+		var img =  image
 		var file = {date:date,species:species,time:date,observations:observations,id:id,location:locobj}
 		var json  = "data:application/json;base64," + btoa(JSON.stringify(file));
 		
@@ -152,6 +152,7 @@
 		}
 
 	    }
+	    
 	    storage_keys('sightings',proc);
 	    
 	} // var test_get_sightings

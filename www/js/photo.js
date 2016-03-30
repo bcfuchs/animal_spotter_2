@@ -51,16 +51,16 @@
 
 	// TODO store in a separate collection -- there might be more than one
 	storage_put('anspot',{key:'photo',value:uri},cb);
-	    
+	cb();
     }
     
     
     function onPhotoURISuccess(imageURI) {
-
+	var uri = imageURI
 	console.log(imageURI);
 	saveDataURI(uri,function(m){ console.log("saving image data " + m)});
 	$('#image-gallery').append($('<img></img>').attr('src',imageURI)).addClass("thumbnail");;
-	$('#cam-icon').style({'width':'100px'});
+	$('#cam-icon').css({'width':'100px'});
 
     }
 
@@ -94,6 +94,6 @@
     function onFail(message) {
 	console.log('Failed because: ' + message);
     }
-
+    window.getPhotoURI = getPhotoURI
 
 }();
