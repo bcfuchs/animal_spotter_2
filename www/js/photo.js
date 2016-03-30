@@ -58,9 +58,9 @@
     function onPhotoURISuccess(imageURI) {
 
 	console.log(imageURI);
-	saveDataURI(uri,function(m){ console.log("saving image data " + m);
+	saveDataURI(uri,function(m){ console.log("saving image data " + m)});
 	$('#image-gallery').append($('<img></img>').attr('src',imageURI)).addClass("thumbnail");;
-	$('#cam-icon').style({'width','100px'});
+	$('#cam-icon').style({'width':'100px'});
 
     }
 

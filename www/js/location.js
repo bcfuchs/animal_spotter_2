@@ -58,19 +58,29 @@ var location = function(cb){
 	}
 
 };
-
+    window.onMapsApiLoaded = function() {
+	    console.log("called onMapsApiLoaded!@");
+	document.addEventListener("deviceready", function() {
+	    var zoomFactor = 8;
+	    var mapSel = "#map";
+	    var msgSel = "#loc";
+	    
+	
+	    location(_location_handler(zoomFactor,mapSel,msgSel));
+	},false);
+	}
     
-    $(document).on('deviceready',function(){
+    
+    document.addEventListener("deviceready", function() {
+
 
 	footer_show_on_click();
-	var zoomFactor = 8;
-	var mapSel = "#map";
-	var msgSel = "#loc";
-
-	location(_location_handler(zoomFactor,mapSel,msgSel));
+	
 	
 
-});
+	
+
+    },false);
 
 
 }()
