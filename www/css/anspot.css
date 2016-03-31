@@ -640,7 +640,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /** @@location  page */
-/** END scroller page */
+
 
 .map-container .map {
 
@@ -649,7 +649,28 @@ h1, h2, h3, h4, h5, h6 {
     
 }
 
+/** END location  page */
 
+/** options page */
+
+.options-container .row {
+
+    margin-right: 5px;
+    margin-left: 5px;
+    color: black;
+
+}
+
+.options-container .row .label-ans {
+
+    font-weight: bold;
+
+}
+
+
+
+
+/** END options page */
 .wolf {
 
     background-image: url(../img/wolf.jpg);
