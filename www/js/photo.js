@@ -84,9 +84,21 @@
     //
     function getPhotoURI(source) {
 	// Retrieve image file location from specified source
-	navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-								 destinationType: destinationType.FILE_URI,
-								 sourceType: source });
+	var options = {
+	    quality: 60,
+	    destinationType: destinationType.FILE_URL,
+	    allowEdit: true,
+	    correctOrientatin: true,
+	    encodingType: Camera.EncodingType.JPEG,
+	    sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+	    targetWidth: 3000
+	}
+
+	var options_old = { quality: 50,
+			    destinationType: destinationType.FILE_URI,
+			    correctOrientation: true, 
+			    sourceType: source }
+	navigator.camera.getPicture(onPhotoURISuccess, onFail, options_old);
     }
 
     // Called if something bad happens.

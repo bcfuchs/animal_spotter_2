@@ -40,9 +40,14 @@
 	  <h2 class="h4">Notification</h2>
 	  <p class="label-ans">Would you like to be notified of how useful your information has been to scientists?</p>
 	  <p>
-	    <input class="option watch-ans" id="notify" type="checkbox">
+	    <input class="option watch-ans" id="notify" type="checkbox"/>
 	  </p>
 
+	</div>
+	<div class="row">
+	  <button onclick="window.plugins.toast.showShortTop('Hello there!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})">Toast showShortTop</button>
+	  <button onclick="window.plugins.toast.showLongBottom('Hello there!', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})">Toast showLongBottom</button>
+	  <button onclick="window.plugins.toast.show('Hello there!', 'long', 'center', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)})">Toast show long center</button>
 	</div>
       </div>
       <!--
