@@ -1,7 +1,18 @@
 
 ! function() {
 
+    var location_unavailable_handler =  function(){
 
+	cordova.plugins.settings.openSetting("location_source",
+					     function(){
+						 console.log("opened location settings");
+						 // this probably won't work
+						 // we need callback on complete. 
+						 window.location.href = "location.html";
+								   },
+					     function(){console.log("failed to open location settings")});
+
+    }
 
     var location = function(success,onError) {
 
@@ -31,13 +42,14 @@
 
 
     var _error_handler = function(e){
-	var log = function() {}
+	var log = function(m) {console.log(m)}
 	// error.code can be:
 	//   0: unknown error
 	//   1: permission denied
 	//   2: position unavailable (error response from locaton provider)
 	//   3: timed out
 	var err = e.code;
+	
 	switch(err) {
 
 	case 1:
@@ -45,9 +57,13 @@
 	    break;
 	case 2:
 	    log("position unavailable");
+	    //window.plugins.toast.show('Please enable location','short','center',log,log);
+	    location_unavailable_handler();
 	    break;
 	case 3:
 	    log("timeout");
+//	    window.plugins.toast.show('Please enable location','short','center',log,log);
+	    location_unavailable_handler();
 	    break;
 	    
 
