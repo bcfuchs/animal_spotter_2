@@ -176,6 +176,8 @@ h1, h2, h3, h4, h5, h6 {
 //    background: #29f62e;
     background: #a5f9a7;;
 }
+
+
 .science-corner {
       font-family: 'Lobster', cursive;
       color: black;
@@ -239,6 +241,62 @@ h1, h2, h3, h4, h5, h6 {
 }
 /** END sighting-card */
 /** @@science.html */
+.feed-container {
+
+    background: white !important;
+
+    overflow: hidden;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family: Arial;
+
+}
+.science-container {
+    overflow: hidden;
+    overflow-y: scroll;
+
+}
+a.rss-url {
+
+    text-decoration: none;
+    color: white;
+}
+
+a.rss-url:hover  {
+    text-decoration: none;
+    color: silver;
+
+}
+.rss-title:hover  {
+    background: #dd1919;
+
+}
+.rss-title {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -30px;
+    padding-left: 10px;
+    padding-top: 0px;
+    color: white;
+    font-size: 18px;
+    font-weight: bodl;
+    background: #bb1919;
+}
+
+
+#rss-feeds {
+    padding:0;
+    margin: 0;
+    width: 102%;
+
+}
+
+.row.rss-feed {
+    overflow:hidden;
+    overflow-y: scroll;
+}
+
 .science-page .main-container {
 
     height: 70%;
@@ -771,3 +829,5 @@ h1, h2, h3, h4, h5, h6 {
 
 
 }
+
+
