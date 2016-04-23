@@ -36,7 +36,7 @@
 	var _click_species_complete_actions = function() {
 
 	    $(".footer-container").removeClass("hideme").show();
-	    $(".species-select-container").removeClass("h79").addClass("h70");
+	    $(".species-select-container").removeClass("h79").addClass("h65");
 
 
 	}

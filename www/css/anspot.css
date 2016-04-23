@@ -126,7 +126,7 @@ html,body {
     border-top: 1px solid gray;
     border-right: 1px solid gray;
     background-repeat:  no-repeat !important;;
-    min-height: 180px !important;
+    min-height: 160px !important;
     background-size: cover !important;
     background-position: 50% 50% !important;    
 
@@ -144,9 +144,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-title {
     
- 
-    font-size:  42px;
-
+    font-size: 250%;
 
 }
 
@@ -297,12 +295,13 @@ h1, h2, h3, h4, h5, h6 {
 
     height: 30% !important;;
     max-height: 30% !important;
+
 }
 
 
 .type-select-container.main-container {
 
-    max-height: 55%;
+    max-height: 66%;
     border-top: 2px solid gray;
     border-bottom: 2px solid gray;
     overflow: hidden;
@@ -391,6 +390,14 @@ h1, h2, h3, h4, h5, h6 {
 .h50 {
 
     height: 50% !important;
+
+}
+
+
+
+.h65 {
+
+    height: 65% !important;
 
 }
 
