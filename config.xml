@@ -10,6 +10,7 @@
     <content src="index.html" />
     <access origin="*" />
     <icon src="res/icon.png" />
+    <splash src="res/screen/ios/ios_splash.png" width="320" height="480"/>
     <platform name="ios">
       <!-- images are determined by width and height. The following are supported -->
       <splash src="res/screen/ios/ios_splash.png" width="320" height="480"/>
