@@ -41,7 +41,7 @@ html,body {
 }
 .white-on-black {
     background: black;
-    color: white;
+    color: white !important;
 
 }
 
