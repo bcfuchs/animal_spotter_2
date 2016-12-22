@@ -27,8 +27,9 @@
 		storage_put('anspot',{key:'species',value:species},function(d){console.log(d)});
 		var time = Date.now();
 		storage_put('anspot',{key:'time',value:time},function(d){console.log(d)});
-		$("#msg").html(species);
-
+		var msg_extra = "You chose: "
+		$("#msg").html(msg_extra + species);
+		$("#msg").addClass("msg-species");
 		_complete_actions();
 	    });
 	}

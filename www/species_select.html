@@ -30,7 +30,7 @@
       <div class="container instruction-container white-on-black">
 	<div class="row  instruction-panel">
 	  <div class="col-xs-12 col-md-12">
-	    <p>Please choose a species.</p>
+	    <p id="msg">Please choose a species.</p>
 	  </div>
 	</div>
       </div>
@@ -44,13 +44,15 @@
 	    <div class="next-container">
 	      <div class="row">
 
-		<div class="msg col-xs-12"><span id="msg"></span></div>
+		<div class="msg col-xs-12"><span id="msg-old"></span></div>
 	      </div>
-	      <div class="row">
+	      <div class="row footer-choice">
 		<div class="col-xs-6">
-		  <a class="white-on-black" href="location.html">Add your location<span id="continue">&rarr;</span></a>
+		  <a class="white-on-black" href="location.html">Add your location
+		    <span id="continue" style="display:none">&rarr;</span>
+		  </a>
 		</div>
-		<div class="col-xs-6">
+		<div class="col-xs-6 white-border-left">
 		  <a class="white-on-black" href="photo.html">Take a photo!</a>
 		</div>
 	      </div>
