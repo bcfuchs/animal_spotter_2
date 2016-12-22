@@ -20,38 +20,44 @@
   <body>
     <div id="wrap" class=" black type-select-page">
 
-      <div class="container title-container green">
-
-	<div class="row">
-	  <span class="page-title">Animal Spotter</span>
-	  <a class="options-link" href="links.html">
-	      <span class="glyphicon glyphicon-menu-hamburger"></span>
-	  </a>
-	</div>
-	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-	  <div class="container">
+	<nav class="navbar navbar-default green ">
+	  <div class="container-fluid">
 	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 		<span class="sr-only">Toggle navigation</span>
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 	      </button>
-	    </div>
+	      <span class="navbar-brand">Animal Spotter</span>
 
-	    <!-- Collect the nav links, forms, and other content for toggling -->
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	      <ul class="nav navbar-nav">
-		<li><a href="index.php">Home</a></li>
-		<li><a href="about.php">About</a></li>
-		<li><a href="#portfolio">Portfolio</a></li>
-		<li><a href="#">Blog</a></li>
-		<li><a href="contact.php">Contact</a></li>
-	      </ul>
 	    </div>
-	  </div>
-	  </nav>
-      </div>
+	    <div id="navbar" class="navbar-collapse collapse">
+	      <ul class="nav navbar-nav" style="z-index:-999">
+		<li class="active"><a href="#">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Contact</a></li>
+		<li class="dropdown">
+		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+		  <ul class="dropdown-menu">
+		    <li><a href="#">Action</a></li>
+		    <li><a href="#">Another action</a></li>
+		    <li><a href="#">Something else here</a></li>
+		    <li role="separator" class="divider"></li>
+		    <li class="dropdown-header">Nav header</li>
+		    <li><a href="#">Separated link</a></li>
+		    <li><a href="#">One more separated link</a></li>
+		  </ul>
+		</li>
+	      </ul>
+	      <ul class="nav navbar-nav navbar-right">
+		<li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
+		<li><a href="../navbar-static-top/">Static top</a></li>
+		<li><a href="../navbar-fixed-top/">Fixed top</a></li>
+	      </ul>
+	    </div><!--/.nav-collapse -->
+	  </div><!--/.container-fluid -->
+	</nav>
       
       <div class="container main-container type-select-container">
 
@@ -86,7 +92,7 @@
 	  </div>
 	</div>
       </div>
-
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
       <script type="text/javascript" src="js/index_ans.js"></script>
