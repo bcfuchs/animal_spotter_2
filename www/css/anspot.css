@@ -35,6 +35,13 @@ html,body {
     height: 100%;
 }
 
+.half {
+    width: 48%;
+}
+.inline {
+    display: inline;
+
+}
 #wrap {
     overflow:hidden;
     height: 100%;
@@ -731,6 +738,10 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+#observation-form {
+    font-size: 24px;
+    
+}
 .row.observations {
 
     height: 100%;
