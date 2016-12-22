@@ -41,7 +41,7 @@ html,body {
 }
 .white-on-black {
     background: black;
-    color: white !important;
+    color: white 
 
 }
 
@@ -69,6 +69,12 @@ html,body {
 .inline {
     display: inline;
 
+}
+#navbar  .navbar-nav>li {
+    color: white;
+}
+#navbar  .navbar-nav>li.active{
+    color: black;;
 }
 #wrap {
     overflow:hidden;
