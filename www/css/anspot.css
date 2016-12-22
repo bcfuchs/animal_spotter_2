@@ -44,6 +44,18 @@ html,body {
     color: white;
 
 }
+
+.dark-green-on-gray {
+    background: rgb(39, 171, 42) !important;
+    color: black !important;;
+    font-family: 'Lobster', cursive;
+}
+
+.dark-green-on-gray .navbar-brand {
+    color: black !important;;
+    font-family: 'Lobster';
+    font-size: 180%;
+}
 .green-on-black {
     background: black;
     color: #a5f9a7 !important;
@@ -835,10 +847,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /** extras */
 
-// from https://github.com/IanLunn/Hover
-// license: https://github.com/IanLunn/Hover/blob/master/license.txt
+/* from https://github.com/IanLunn/Hover */
+/* license: https://github.com/IanLunn/Hover/blob/master/license.txt */
 
 /* Sweep To Right */
+
 .hvr-sweep-to-right {
     display: inline-block;
     vertical-align: middle;
@@ -848,9 +861,10 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     -webkit-transition-property: color;
     transition-property: color;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
 }
+
 .hvr-sweep-to-right:before {
     content: "";
     position: absolute;
@@ -866,8 +880,8 @@ h1, h2, h3, h4, h5, h6 {
     transform-origin: 0 50%;
     -webkit-transition-property: transform;
     transition-property: transform;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
     -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
 }
