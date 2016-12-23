@@ -70,6 +70,10 @@ html,body {
     display: inline;
 
 }
+#navbar-top {
+    margin-bottom: 0 !important;
+
+}
 #navbar  .navbar-nav>li {
     color: white;
 }
