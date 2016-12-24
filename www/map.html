@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+    <link rel="stylesheet" type="text/css" href="css/anspot.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <title>Animal Spotter</title>
+    <script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+    <script type="text/javascript" src="js/lawnchair.js"></script>
+    <script type="text/javascript" src="js/photo.js"></script>
+    <script type="text/javascript" src="js/anspot.js"></script>    
+    <style>
+      .row.map-container {
+      height: 60%;
+
+      }
+      .row.location {
+      height: 20%;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap" class="location-page black">
+      <!--
+	  <div id="splash-image"></div>
+	  -->
+      <div class="container title-container green">
+
+	<div class="row instructions ">
+	  <h2 class="page-title">Animal Spotter</h2>
+	  <span id="title-type">Location</span>
+	</div>
+      </div>
+      
+      <div class="container main-container map-container blue h79" id="location-container">
+	
+	<div class="row location">
+	  <div id="loc" class="col-xs-12 col-md-12 query-panel query-panel" >
+	  </div>
+	</div>
+	<div class="row map">
+	  <div id="map" class="col-xs-12 col-md-12 query-panel">
+	    
+	  </div>
+	</div>
+      </div>
+      
+      <div class="container footer-container green show-on-click hideme"
+	   data-open-event="mapLoaded"
+	   data-open-event-target="#location-container"
+	   data-open-event-add-class="h70"
+	   data-open-event-remove-class="h79"
+	   >
+	<div class="row">
+	  <div class="col-xs-12 col-md-12 green footer-panel">
+	    <div class="next-container">
+	      <h2><a href="observations.html">Take notes! <span id="continue">&rarr;</span></a></h2>
+	    </div>
+	    
+	  </div>
+	</div>
+      </div>
+
+
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+      <script src="js/map.js"></script>
+<!-- won't work for firefoxos -->
+      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFuh9b_aYG4Y7BkLmFoWmBI0vn8OpCGuQ&sensor=true&callback=onMapsApiLoaded"></script>
+      <script src="js/gmaps.js"></script>
+
+
+    </div>
+  </body>
+
+</html>
